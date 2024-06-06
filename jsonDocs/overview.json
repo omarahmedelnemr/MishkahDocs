@@ -1,6 +1,6 @@
 [
     {
-        "endpoint":"/overview/new-community",
+        "endpoint":"/overview/finance",
         "section":"overview",
         "method":"POST",
         "description":"Create New Community (Categories For Patients) Where Patients Can Post",
