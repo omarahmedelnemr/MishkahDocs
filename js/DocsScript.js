@@ -6,6 +6,12 @@ import lecturesJson from '../jsonDocs/lectures.json' assert {type:"json"}
 import attendanceJson from '../jsonDocs/attendance.json' assert {type:"json"}
 import todoJson from '../jsonDocs/todo.json' assert {type:"json"}
 import settingsJson from '../jsonDocs/setting.json' assert {type:"json"}
+import adminAuthJson from '../jsonDocs/admin_auth.json' assert {type:"json"}
+import adminTracksJson from '../jsonDocs/admin-tracks.json' assert {type:"json"}
+import adminLecturesJson from '../jsonDocs/admin-lectures.json' assert {type:"json"}
+import adminAttendancesJson from '../jsonDocs/admin-attendace.json' assert {type:"json"}
+import adminFinancialsJson from '../jsonDocs/admin-financials.json' assert {type:"json"}
+import superAdminJson from '../jsonDocs/Super-admin.json' assert {type:"json"}
 
 const jsonData = [
     ...overviewJson,
@@ -14,7 +20,13 @@ const jsonData = [
     ...lecturesJson,
     ...attendanceJson,
     ...todoJson,
-    ...settingsJson
+    ...settingsJson,
+    ...adminAuthJson,
+    ...adminTracksJson,
+    ...adminLecturesJson,
+    ...adminAttendancesJson,
+    ...adminFinancialsJson,
+    ...superAdminJson   
 ]
 
 Object.prototype.prettyPrint = function(){

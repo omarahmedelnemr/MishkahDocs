@@ -1,0 +1,169 @@
+[
+    {
+        "endpoint": "/super-admin/admins_list",
+        "section": "super-admin",
+        "method": "GET",
+        "description": "Get all admins list",
+        "parameters": [],
+        "requestExample": {},
+        "responseParameters": [
+            {
+                "paramName": "name",
+                "paramType": "string",
+                "paramDescription": "Admin name"
+            },
+            {
+                "paramName": "username",
+                "paramType": "string",
+                "paramDescription": "Admin username"
+            },
+            {
+                "paramName": "permissions",
+                "paramType": "array",
+                "paramDescription": "List of admin permissions",
+                "paramItems": {
+                    "type": "string",
+                    "description": "Permission name"
+                }
+            }
+        ],
+        "responseExample": [
+            {
+                "name": "Admin One",
+                "username": "admin1",
+                "permissions": ["permission1", "permission2"]
+            },
+            {
+                "name": "Admin Two",
+                "username": "admin2",
+                "permissions": ["permission1"]
+            }
+        ],
+        "responseDescription": "Receives the list of all admins including their names, usernames, and permissions"
+    },
+    {
+        "endpoint": "/super-admin/add_new_admin",
+        "section": "super-admin",
+        "method": "POST",
+        "description": "Create a link for new admin",
+        "parameters": [
+            {
+                "paramName": "permissions",
+                "paramType": "array",
+                "paramDescription": "List of permissions for the new admin",
+                "paramItems": {
+                    "type": "string",
+                    "description": "Permission name"
+                }
+            }
+        ],
+        "requestExample": {
+            "permissions": ["permission1", "permission2"]
+        },
+        "responseParameters": [
+            {
+                "paramName": "token",
+                "paramType": "string",
+                "paramDescription": "A token to send to admin to start signing in"
+            }
+        ],
+        "responseExample": {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoib21hciBlbG5lbXIiLCJ1c2VySUQiOjF9.6RoM6tyuCMDa0JcCzMHTIRzYZRpBKLv_vTTvyz5ICHE"
+        },
+        "responseDescription": "Receives a token to send to the new admin for starting the sign-in process"
+    },
+    {
+        "endpoint": "/super-admin/change_permission",
+        "section": "super-admin",
+        "method": "POST",
+        "description": "Edit permissions for an admin",
+        "parameters": [
+            {
+                "paramName": "adminID",
+                "paramType": "string",
+                "paramDescription": "The ID of the admin"
+            },
+            {
+                "paramName": "permissions",
+                "paramType": "array",
+                "paramDescription": "List of new permissions",
+                "paramItems": {
+                    "type": "string",
+                    "description": "Permission name"
+                }
+            }
+        ],
+        "requestExample": {
+            "adminID": "admin001",
+            "permissions": ["permission1", "permission3"]
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the permissions are successfully changed, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/delete_admin",
+        "section": "super-admin",
+        "method": "DELETE",
+        "description": "Remove an admin with all their related info",
+        "parameters": [
+            {
+                "paramName": "adminID",
+                "paramType": "string",
+                "paramDescription": "The ID of the admin"
+            },
+            {
+                "paramName": "superAdminPasscode",
+                "paramType": "string",
+                "paramDescription": "Super admin passcode for authentication"
+            }
+        ],
+        "requestExample": {
+            "adminID": "admin001",
+            "superAdminPasscode": "superpasscode123"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the admin is successfully deleted, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/add_new_track",
+        "section": "super-admin",
+        "method": "POST",
+        "description": "Create a new track",
+        "parameters": [
+            {
+                "paramName": "trackName",
+                "paramType": "string",
+                "paramDescription": "The name of the track"
+            },
+            {
+                "paramName": "trackLecturesNumber",
+                "paramType": "integer",
+                "paramDescription": "The number of lectures in the track"
+            },
+            {
+                "paramName": "attendingPrice",
+                "paramType": "number",
+                "paramDescription": "The price for attending the track for Each Lecture"
+            },
+            {
+                "paramName": "weeklyDate",
+                "paramType": "string",
+                "paramDescription": "The weekly date for the track meetings"
+            },
+            {
+                "paramName": "expectedStartDate",
+                "paramType": "string",
+                "paramDescription": "The expected start date of the track"
+            }
+        ],
+        "requestExample": {
+            "trackName": "New Track",
+            "trackLecturesNumber": 10,
+            "attendingPrice": 100.00,
+            "weeklyDate": "Monday",
+            "expectedStartDate": "2024-07-01"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the track is successfully created, or one of the common errors"
+    }
+]

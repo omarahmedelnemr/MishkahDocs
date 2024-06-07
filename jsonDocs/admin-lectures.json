@@ -1,0 +1,210 @@
+[
+    {
+        "endpoint": "/admin-lectures/lectures",
+        "section": "admin-lectures",
+        "method": "GET",
+        "description": "Get the list of lectures by track",
+        "parameters": [
+            {
+                "paramName": "trackID",
+                "paramType": "string",
+                "paramDescription": "The ID of the track"
+            }
+        ],
+        "requestExample": {
+            "trackID": "track123"
+        },
+        "responseParameters": [
+            {
+                "paramName": "lectureID",
+                "paramType": "string",
+                "paramDescription": "The ID of the lecture"
+            },
+            {
+                "paramName": "lectureName",
+                "paramType": "string",
+                "paramDescription": "The name of the lecture"
+            },
+            {
+                "paramName": "LectureDate",
+                "paramType": "string",
+                "paramDescription": "The date of the lecture"
+            }
+        ],
+        "responseExample": [
+            {
+                "lectureID": "lecture001",
+                "lectureName": "Introduction to Data Science",
+                "LectureDate": "2024-07-01"
+            },
+            {
+                "lectureID": "lecture002",
+                "lectureName": "Advanced Data Analysis",
+                "LectureDate": "2024-07-08"
+            }
+        ],
+        "responseDescription": "Receives a list of lectures in the specified track, including lecture ID, name, and date"
+    },
+    {
+        "endpoint": "/admin-lectures/lecture_tasks",
+        "section": "admin-lectures",
+        "method": "GET",
+        "description": "Get the list of lecture tasks",
+        "parameters": [
+            {
+                "paramName": "trackID",
+                "paramType": "string",
+                "paramDescription": "The ID of the track"
+            }
+        ],
+        "requestExample": {
+            "trackID": "track123"
+        },
+        "responseParameters": [
+            {
+                "paramName": "taskName",
+                "paramType": "string",
+                "paramDescription": "The name of the task"
+            },
+            {
+                "paramName": "taskStatus",
+                "paramType": "string",
+                "paramDescription": "The status of the task"
+            }
+        ],
+        "responseExample": [
+            {
+                "taskName": "Complete Assignment 1",
+                "taskStatus": "Pending"
+            },
+            {
+                "taskName": "Read Chapter 2",
+                "taskStatus": "Completed"
+            }
+        ],
+        "responseDescription": "Receives a list of tasks for the specified track, including task name and status"
+    },
+    {
+        "endpoint": "/admin-lectures/lecture_materials",
+        "section": "admin-lectures",
+        "method": "GET",
+        "description": "Get the list of lecture materials",
+        "parameters": [
+            {
+                "paramName": "trackID",
+                "paramType": "string",
+                "paramDescription": "The ID of the track"
+            }
+        ],
+        "requestExample": {
+            "trackID": "track123"
+        },
+        "responseParameters": [
+            {
+                "paramName": "materialName",
+                "paramType": "string",
+                "paramDescription": "The name of the material"
+            },
+            {
+                "paramName": "materialType",
+                "paramType": "string",
+                "paramDescription": "The type of the material (video or document)"
+            }
+        ],
+        "responseExample": [
+            {
+                "materialName": "Lecture 1 Slides",
+                "materialType": "document"
+            },
+            {
+                "materialName": "Lecture 1 Video",
+                "materialType": "video"
+            }
+        ],
+        "responseDescription": "Receives a list of materials for the specified track, including material name and type"
+    },
+    {
+        "endpoint": "/admin-lectures/add_new_lecture",
+        "section": "admin-lectures",
+        "method": "POST",
+        "description": "Create a new lecture",
+        "parameters": [
+            {
+                "paramName": "trackID",
+                "paramType": "string",
+                "paramDescription": "The ID of the track"
+            },
+            {
+                "paramName": "LectureTitle",
+                "paramType": "string",
+                "paramDescription": "The title of the lecture"
+            },
+            {
+                "paramName": "LectureDate",
+                "paramType": "string",
+                "paramDescription": "The date of the lecture"
+            }
+        ],
+        "requestExample": {
+            "trackID": "track123",
+            "LectureTitle": "New Lecture",
+            "LectureDate": "2024-07-15"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the lecture is successfully created, or one of the common errors"
+    },
+    {
+        "endpoint": "/admin-lectures/add_new_task",
+        "section": "admin-lectures",
+        "method": "POST",
+        "description": "Create a new task entity for a lecture",
+        "parameters": [
+            {
+                "paramName": "lectureID",
+                "paramType": "string",
+                "paramDescription": "The ID of the lecture the task is related to"
+            },
+            {
+                "paramName": "taskText",
+                "paramType": "string",
+                "paramDescription": "The text of the task"
+            }
+        ],
+        "requestExample": {
+            "lectureID": "lecture001",
+            "taskText": "Complete the assignment"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the task is successfully created, or one of the common errors"
+    },
+    {
+        "endpoint": "/admin-lectures/add_new_material",
+        "section": "admin-lectures",
+        "method": "POST",
+        "description": "Create a new material entity for a lecture",
+        "parameters": [
+            {
+                "paramName": "lectureID",
+                "paramType": "string",
+                "paramDescription": "The ID of the lecture the material is related to"
+            },
+            {
+                "paramName": "materialTitle",
+                "paramType": "string",
+                "paramDescription": "The title of the material"
+            },
+            {
+                "paramName": "materialType",
+                "paramType": "string",
+                "paramDescription": "The type of the material (video or document)"
+            }
+        ],
+        "requestExample": {
+            "lectureID": "lecture001",
+            "materialTitle": "Lecture Slides",
+            "materialType": "document"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the material is successfully created, or one of the common errors"
+    }
+]

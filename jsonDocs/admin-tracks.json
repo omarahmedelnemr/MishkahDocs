@@ -1,0 +1,79 @@
+[
+    {
+        "endpoint": "/admin-tracks/assigned_tracks",
+        "section": "admin-tracks",
+        "method": "GET",
+        "description": "Get the list of tracks assigned to the admin",
+        "parameters": [
+            {
+                "paramName": "adminID",
+                "paramType": "string",
+                "paramDescription": "The ID of the admin"
+            }
+        ],
+        "requestExample": {
+            "adminID": "admin123"
+        },
+        "responseParameters": [
+            {
+                "paramName": "trackName",
+                "paramType": "string",
+                "paramDescription": "The name of the track"
+            },
+            {
+                "paramName": "trackDescription",
+                "paramType": "string",
+                "paramDescription": "A description of the track"
+            },
+            {
+                "paramName": "trackLectureNumber",
+                "paramType": "integer",
+                "paramDescription": "The number of lectures in the track"
+            },
+            {
+                "paramName": "trackFirstLectureDate",
+                "paramType": "string",
+                "paramDescription": "The date of the first lecture in the track"
+            }
+        ],
+        "responseExample": [
+            {
+                "trackName": "Data Science",
+                "trackDescription": "A comprehensive data science track",
+                "trackLectureNumber": 12,
+                "trackFirstLectureDate": "2024-07-01"
+            },
+            {
+                "trackName": "Machine Learning",
+                "trackDescription": "An advanced machine learning track",
+                "trackLectureNumber": 10,
+                "trackFirstLectureDate": "2024-07-15"
+            }
+        ],
+        "responseDescription": "Receives a list of tracks assigned to the admin, including track name, description, number of lectures, and first lecture date"
+    },
+    {
+        "endpoint": "/admin-tracks/change-weekly-date",
+        "section": "admin-tracks",
+        "method": "POST",
+        "description": "Change the weekly meeting date of a track",
+        "parameters": [
+            {
+                "paramName": "trackID",
+                "paramType": "string",
+                "paramDescription": "The ID of the track"
+            },
+            {
+                "paramName": "newDate",
+                "paramType": "string",
+                "paramDescription": "The new weekly date for the track meetings"
+            }
+        ],
+        "requestExample": {
+            "trackID": "track001",
+            "newDate": "Tuesday"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the weekly date is successfully changed, or one of the common errors"
+    }
+]

@@ -1,0 +1,121 @@
+[
+    {
+        "endpoint": "/admin-financials/financial_record",
+        "section": "admin-financials",
+        "method": "GET",
+        "description": "Get the financial records of users",
+        "parameters": [
+            {
+                "paramName": "lectureID",
+                "paramType": "string",
+                "paramDescription": "The ID of the lecture"
+            }
+        ],
+        "requestExample": {
+            "lectureID": "lecture001"
+        },
+        "responseParameters": [
+            {
+                "paramName": "paid",
+                "paramType": "integer",
+                "paramDescription": "The number of people who paid"
+            },
+            {
+                "paramName": "wallet",
+                "paramType": "integer",
+                "paramDescription": "The number of people who added money to their wallet"
+            },
+            {
+                "paramName": "notPaid",
+                "paramType": "integer",
+                "paramDescription": "The number of people who did not pay"
+            },
+            {
+                "paramName": "people",
+                "paramType": "array",
+                "paramDescription": "The list of people and their financial status",
+                "paramItems": {
+                    "type": "object",
+                    "properties": {
+                        "userID": {
+                            "type": "string",
+                            "description": "The ID of the user"
+                        },
+                        "username": {
+                            "type": "string",
+                            "description": "The username of the user"
+                        },
+                        "status": {
+                            "type": "string",
+                            "description": "The financial status (if it was recorded, otherwise it is Null)"
+                        }
+                    }
+                }
+            }
+        ],
+        "responseExample": {
+            "paid": 15,
+            "wallet": 5,
+            "notPaid": 3,
+            "people": [
+                {
+                    "userID": "user001",
+                    "username": "johndoe",
+                    "status": "paid"
+                },
+                {
+                    "userID": "user002",
+                    "username": "janedoe",
+                    "status": "wallet"
+                }
+            ]
+        },
+        "responseDescription": "Receives the financial records of the specified lecture, including payment counts and the list of people with their statuses"
+    },
+    {
+        "endpoint": "/admin-financials/submit_financial_record",
+        "section": "admin-financials",
+        "method": "POST",
+        "description": "Submit a financial record",
+        "parameters": [
+            {
+                "paramName": "lectureID",
+                "paramType": "string",
+                "paramDescription": "The ID of the lecture"
+            },
+            {
+                "paramName": "people",
+                "paramType": "array",
+                "paramDescription": "The list of people and their financial statuses",
+                "paramItems": {
+                    "type": "object",
+                    "properties": {
+                        "userID": {
+                            "type": "string",
+                            "description": "The ID of the user"
+                        },
+                        "status": {
+                            "type": "string",
+                            "description": "The financial status (if it was recorded, otherwise it is Null)"
+                        }
+                    }
+                }
+            }
+        ],
+        "requestExample": {
+            "lectureID": "lecture001",
+            "people": [
+                {
+                    "userID": "user001",
+                    "status": "paid"
+                },
+                {
+                    "userID": "user002",
+                    "status": "wallet"
+                }
+            ]
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the financial record is successfully submitted, or one of the common errors"
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "endpoint": "/admin/signup",
+        "section": "admin-auth",
+        "method": "POST",
+        "description": "Signup for new admins using the link with token created by a super Admin",
+        "parameters": [
+            {
+                "paramName": "token",
+                "paramType": "string",
+                "paramDescription": "The token received from the super Admin"
+            },
+            {
+                "paramName": "username",
+                "paramType": "string",
+                "paramDescription": "The username for the new admin"
+            },
+            {
+                "paramName": "password",
+                "paramType": "string",
+                "paramDescription": "The password for the new admin"
+            }
+        ],
+        "requestExample": {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoib21hciBlbG5lbXIiLCJ1c2VySUQiOjF9.6RoM6tyuCMDa0JcCzMHTIRzYZRpBKLv_vTTvyz5ICHE",
+            "username": "newAdmin",
+            "password": "adminPass123"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the signup is successful, or one of the common errors"
+    }
+]
