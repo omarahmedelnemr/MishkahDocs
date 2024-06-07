@@ -1,0 +1,170 @@
+[
+    {
+        "endpoint":"/todo/tasks",
+        "section":"todo",
+        "method":"GET",
+        "description":"Get all tasks that the user hasn't done yet",
+        "parameters":[
+            {
+                "paramName":"userID",
+                "paramType":"string",
+                "paramDescription":"The user ID"
+            }
+        ],
+        "requestExample":{
+            "userID":"12345"
+        },
+        "responseParameters":[
+            {
+                "paramName":"taskID",
+                "paramType":"string",
+                "paramDescription":"The ID of the task"
+            },
+            {
+                "paramName":"taskName",
+                "paramType":"string",
+                "paramDescription":"The name of the task"
+            },
+            {
+                "paramName":"taskTrack",
+                "paramType":"string",
+                "paramDescription":"The track of the task"
+            },
+            {
+                "paramName":"taskLecture",
+                "paramType":"string",
+                "paramDescription":"The lecture associated with the task"
+            },
+            {
+                "paramName":"taskDate",
+                "paramType":"string",
+                "paramDescription":"The date of the task"
+            }
+        ],
+        "responseExample":[
+            {
+                "taskID":"001",
+                "taskName":"Assignment 1",
+                "taskTrack":"Mathematics",
+                "taskLecture":"Calculus",
+                "taskDate":"2024-06-15"
+            },
+            {
+                "taskID":"002",
+                "taskName":"Project Proposal",
+                "taskTrack":"Computer Science",
+                "taskLecture":"Algorithms",
+                "taskDate":"2024-06-17"
+            }
+        ],
+        "responseDescription":"Receives a list of tasks that the user hasn't done yet, including task ID, name, track, lecture, and date"
+    },
+    {
+        "endpoint":"/todo/done_tasks",
+        "section":"todo",
+        "method":"GET",
+        "description":"Get all tasks that the user has done",
+        "parameters":[
+            {
+                "paramName":"userID",
+                "paramType":"string",
+                "paramDescription":"The user ID"
+            }
+        ],
+        "requestExample":{
+            "userID":"12345"
+        },
+        "responseParameters":[
+            {
+                "paramName":"taskID",
+                "paramType":"string",
+                "paramDescription":"The ID of the task"
+            },
+            {
+                "paramName":"taskName",
+                "paramType":"string",
+                "paramDescription":"The name of the task"
+            },
+            {
+                "paramName":"taskTrack",
+                "paramType":"string",
+                "paramDescription":"The track of the task"
+            },
+            {
+                "paramName":"taskLecture",
+                "paramType":"string",
+                "paramDescription":"The lecture associated with the task"
+            },
+            {
+                "paramName":"taskDate",
+                "paramType":"string",
+                "paramDescription":"The date of the task"
+            }
+        ],
+        "responseExample":[
+            {
+                "taskID":"003",
+                "taskName":"Assignment 2",
+                "taskTrack":"Mathematics",
+                "taskLecture":"Algebra",
+                "taskDate":"2024-06-20"
+            },
+            {
+                "taskID":"004",
+                "taskName":"Quiz",
+                "taskTrack":"Computer Science",
+                "taskLecture":"Data Structures",
+                "taskDate":"2024-06-22"
+            }
+        ],
+        "responseDescription":"Receives a list of tasks that the user has done, including task ID, name, track, lecture, and date"
+    },
+    {
+        "endpoint":"/todo/mark_done",
+        "section":"todo",
+        "method":"POST",
+        "description":"Mark a task as done",
+        "parameters":[
+            {
+                "paramName":"userID",
+                "paramType":"string",
+                "paramDescription":"The user ID"
+            },
+            {
+                "paramName":"taskID",
+                "paramType":"string",
+                "paramDescription":"The ID of the task to mark as done"
+            }
+        ],
+        "requestExample":{
+            "userID":"12345",
+            "taskID":"001"
+        },
+        "responseExample":"Done",
+        "responseDescription":"Receives 'Done' if the task is successfully marked as done or one of the common errors"
+    },
+    {
+        "endpoint":"/todo/mark_not_done",
+        "section":"todo",
+        "method":"POST",
+        "description":"Mark a task as not done",
+        "parameters":[
+            {
+                "paramName":"userID",
+                "paramType":"string",
+                "paramDescription":"The user ID"
+            },
+            {
+                "paramName":"taskID",
+                "paramType":"string",
+                "paramDescription":"The ID of the task to mark as not done"
+            }
+        ],
+        "requestExample":{
+            "userID":"12345",
+            "taskID":"001"
+        },
+        "responseExample":"Done",
+        "responseDescription":"Receives 'Done' if the task is successfully marked as not done or one of the common errors"
+    }
+]

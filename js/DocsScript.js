@@ -1,10 +1,20 @@
 
 import overviewJson from '../jsonDocs/overview.json' assert {type:"json"}
 import authJson from '../jsonDocs/auth.json' assert {type:"json"}
+import tracksJson from '../jsonDocs/tracks.json' assert {type:"json"}
+import lecturesJson from '../jsonDocs/lectures.json' assert {type:"json"}
+import attendanceJson from '../jsonDocs/attendance.json' assert {type:"json"}
+import todoJson from '../jsonDocs/todo.json' assert {type:"json"}
+import settingsJson from '../jsonDocs/setting.json' assert {type:"json"}
 
 const jsonData = [
     ...overviewJson,
-    ...authJson
+    ...authJson,
+    ...tracksJson,
+    ...lecturesJson,
+    ...attendanceJson,
+    ...todoJson,
+    ...settingsJson
 ]
 
 Object.prototype.prettyPrint = function(){
@@ -62,7 +72,23 @@ for(var i =0;i<jsonData.length;i++){
     }
 
     htmlBuild+='</tbody></table><h4>Response:</h4><p>'+item.responseDescription+'</p>'
-         
+    if (item['responseParameters'] != undefined){
+        htmlBuild+='<h4>Response Parameters:</h4>\
+        <table>\
+        <thead>\
+        <tr>\
+            <th>Parmeters</th>\
+            <th>Type</th>\
+            <th>Description</th>\
+        </tr>\
+        </thead>\
+        <tbody>'
+        for(var tr =0;tr<item.responseParameters.length;tr++){
+            htmlBuild+= '<tr> <td>'+item.responseParameters[tr].paramName+'</td><td>'+item.responseParameters[tr].paramType+'</td><td>'+item.responseParameters[tr].paramDescription+'</td></tr>'
+        }
+        htmlBuild+='</tbody></table>'
+    }
+    
     if (item.requestExample !=null){
         htmlBuild+= '<h4>Request Json Example:</h4><div class="CodeArea">\
         <pre><code class="json">'+item.requestExample.prettyPrint()+'</code></pre></div>'

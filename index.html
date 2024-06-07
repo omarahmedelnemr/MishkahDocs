@@ -67,9 +67,46 @@
              <li class="scroll-to-link" data-target="content-auth">
                 <a>&emsp;&emsp;Authentication</a>
             </li>
-             <li class="scroll-to-link" data-target="content-overview">
-                 <a>&emsp;&emsp;Overview</a>
-             </li>
+            <li class="scroll-to-link" data-target="content-overview">
+                <a>&emsp;&emsp;Overview</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-tracks">
+                <a>&emsp;&emsp;Tracks</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-lectures">
+                <a>&emsp;&emsp;Lectures</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-attendance">
+                <a>&emsp;&emsp;Attendance</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-todo">
+                <a>&emsp;&emsp;Todo</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-settings">
+                <a>&emsp;&emsp;Settings</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-admin-branches">
+                <a>Admin Branches</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-admin-auth">
+                <a>&emsp;&emsp;Authentication</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-admin-tracks">
+                <a>&emsp;&emsp;Tracks</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-admin-lectures">
+                <a>&emsp;&emsp;Lectures</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-admin-attendance">
+                <a>&emsp;&emsp;Attendance</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-admin-financials">
+                <a>&emsp;&emsp;Financials</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-admin-admins">
+                <a>&emsp;&emsp;Admins</a>
+            </li>
+            
          </ul>
      </div>
  </div>
@@ -163,7 +200,151 @@
             <div id="overviewEndpointsDetails"> 
 
             </div>
-        </div>  
+        </div>
+        
+    <div class="overflow-hidden content-section" id="content-tracks">
+        <h2>Tracks</h2>
+        <p>
+            This section provides information on the different tracks available in our system.
+        </p>
+        <p>
+            Each track With specific details and endpoints.
+        </p>
+        <div class="endpointList"  id="tracksEndpointsList">
+                    
+        </div>
+        <div id="tracksEndpointsDetails"> 
+
+        </div>
+    </div>
+
+    <div class="overflow-hidden content-section" id="content-lectures">
+        <h2>Lectures</h2>
+        <p>
+            This section contains information related to lecture endpoints.
+        </p>
+        <p>
+            Find all the necessary details to manage and access lectures.
+        </p>
+        <div class="endpointList" id="lecturesEndpointsList"></div>
+        <div id="lecturesEndpointsDetails"></div>
+    </div>
+
+    <div class="overflow-hidden content-section" id="content-attendance">
+        <h2>Attendance</h2>
+        <p>
+            This section provides details about attendance tracking and related endpoints.
+        </p>
+        <p>
+            Ensure accurate attendance records using the provided tools.
+        </p>
+        <div class="endpointList" id="attendanceEndpointsList"></div>
+        <div id="attendanceEndpointsDetails"></div>
+    </div>
+
+    <div class="overflow-hidden content-section" id="content-todo">
+        <h2>Todo</h2>
+        <p>
+            This section allows The User to See all his/her Tasks with Easy Access
+        </p>
+       
+        <div class="endpointList" id="todoEndpointsList"></div>
+        <div id="todoEndpointsDetails"></div>
+    </div>
+
+    <div class="overflow-hidden content-section" id="content-settings">
+        <h2>Settings</h2>
+        <p>
+            This section allows you to manage various settings of the system.
+        </p>
+        <p>
+            Customize the system according to your preferences.
+        </p>
+        <div class="endpointList" id="settingsEndpointsList"></div>
+        <div id="settingsEndpointsDetails"></div>
+    </div>
+
+    <div class="overflow-hidden content-section" id="content-admin-branches">
+        <h2>Admin Branches</h2>
+        <p>
+            This section is for administrators to manage different branches of the system.
+        </p>
+        <p>
+            Ensure smooth operation of all branches with the provided tools.
+        </p>
+        <div class="endpointList" id="admin-branchesEndpointsList"></div>
+        <div id="admin-branchesEndpointsDetails"></div>
+    </div>
+
+    <div class="overflow-hidden content-section" id="content-admin-auth">
+        <h2>Authentication</h2>
+        <p>
+            This section is for administrators to manage authentication endpoints like Login, Signup.
+        </p>
+        <p>Here are all endpoints that can be used:</p>
+        <div class="endpointList" id="admin-authEndpointsList"></div>
+        <div id="admin-authEndpointsDetails"></div>
+    </div>
+
+    <div class="overflow-hidden content-section" id="content-admin-tracks">
+        <h2>Tracks</h2>
+        <p>
+            This section is for administrators to manage the different tracks available in the system.
+        </p>
+        <p>
+            Each track has specific details and endpoints.
+        </p>
+        <div class="endpointList" id="admin-tracksEndpointsList"></div>
+        <div id="admin-tracksEndpointsDetails"></div>
+    </div>
+
+    <div class="overflow-hidden content-section" id="content-admin-lectures">
+        <h2>Lectures</h2>
+        <p>
+            This section is for administrators to manage lecture-related endpoints.
+        </p>
+        <p>
+            Find all the necessary details to manage and access lectures.
+        </p>
+        <div class="endpointList" id="admin-lecturesEndpointsList"></div>
+        <div id="admin-lecturesEndpointsDetails"></div>
+    </div>
+
+    <div class="overflow-hidden content-section" id="content-admin-attendance">
+        <h2>Attendance</h2>
+        <p>
+            This section is for administrators to manage attendance tracking and related endpoints.
+        </p>
+        <p>
+            Ensure accurate attendance records using the provided tools.
+        </p>
+        <div class="endpointList" id="admin-attendanceEndpointsList"></div>
+        <div id="admin-attendanceEndpointsDetails"></div>
+    </div>
+
+    <div class="overflow-hidden content-section" id="content-admin-financials">
+        <h2>Financials</h2>
+        <p>
+            This section provides details on managing the financial aspects of the system.
+        </p>
+        <p>
+            Access and manage financial records and endpoints.
+        </p>
+        <div class="endpointList" id="admin-financialsEndpointsList"></div>
+        <div id="admin-financialsEndpointsDetails"></div>
+    </div>
+
+    <div class="overflow-hidden content-section" id="content-admin-admins">
+        <h2>Admins</h2>
+        <p>
+            This section is for managing admin users and their permissions.
+        </p>
+        <p>
+            Ensure proper admin user management for secure system operation.
+        </p>
+        <div class="endpointList" id="admin-adminsEndpointsList"></div>
+        <div id="admin-adminsEndpointsDetails"></div>
+    </div>
      </div>
  </div>
  

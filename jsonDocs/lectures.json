@@ -1,0 +1,132 @@
+[
+    {
+        "endpoint":"lectures/lectures",
+        "section":"lectures",
+        "method":"GET",
+        "description":"Get the list of lectures by course",
+        "parameters":[
+            {
+                "paramName":"courseID",
+                "paramType":"string",
+                "paramDescription":"The course ID"
+            }
+        ],
+        "requestExample":{
+            "courseID":"12345"
+        },
+        "responseParameters":[
+            {
+                "paramName":"lectureID",
+                "paramType":"string",
+                "paramDescription":"The ID of the lecture"
+            },
+            {
+                "paramName":"lectureName",
+                "paramType":"string",
+                "paramDescription":"The name of the lecture"
+            },
+            {
+                "paramName":"lectureDate",
+                "paramType":"string",
+                "paramDescription":"The date of the lecture"
+            }
+        ],
+        "responseExample":[
+            {
+                "lectureID":"001",
+                "lectureName":"Introduction to Programming",
+                "lectureDate":"2024-06-10T09:00:00.000Z"
+            },
+            {
+                "lectureID":"002",
+                "lectureName":"Data Structures",
+                "lectureDate":"2024-06-12T09:00:00.000Z"
+            }
+        ],
+        "responseDescription":"Receives a list of lectures for the specified course, including lecture ID, name, and date"
+    },
+    {
+        "endpoint":"lectures/lecture_materials",
+        "section":"lectures",
+        "method":"GET",
+        "description":"Get the list of lecture materials",
+        "parameters":[
+            {
+                "paramName":"courseID",
+                "paramType":"string",
+                "paramDescription":"The course ID"
+            }
+        ],
+        "requestExample":{
+            "courseID":"12345"
+        },
+        "responseParameters":[
+            {
+                "paramName":"materialName",
+                "paramType":"string",
+                "paramDescription":"The name of the material"
+            },
+            {
+                "paramName":"materialType",
+                "paramType":"string",
+                "paramDescription":"The type of the material"
+            }
+        ],
+        "responseExample":[
+            {
+                "materialName":"Slides",
+                "materialType":"PDF"
+            },
+            {
+                "materialName":"Video Recording",
+                "materialType":"MP4"
+            }
+        ],
+        "responseDescription":"Receives a list of lecture materials for the specified course, including material name and type"
+    },
+    {
+        "endpoint":"lectures/lecture_tasks",
+        "section":"lectures",
+        "method":"GET",
+        "description":"Get the list of lecture tasks",
+        "parameters":[
+            {
+                "paramName":"userID",
+                "paramType":"string",
+                "paramDescription":"The user ID to determine whether the user has completed the tasks"
+            },
+            {
+                "paramName":"courseID",
+                "paramType":"string",
+                "paramDescription":"The course ID"
+            }
+        ],
+        "requestExample":{
+            "userID":"12345",
+            "courseID":"67890"
+        },
+        "responseParameters":[
+            {
+                "paramName":"taskName",
+                "paramType":"string",
+                "paramDescription":"The name of the task"
+            },
+            {
+                "paramName":"taskStatus",
+                "paramType":"string",
+                "paramDescription":"The status of the task (e.g., completed, pending)"
+            }
+        ],
+        "responseExample":[
+            {
+                "taskName":"Assignment 1",
+                "taskStatus":"Completed"
+            },
+            {
+                "taskName":"Assignment 2",
+                "taskStatus":"Pending"
+            }
+        ],
+        "responseDescription":"Receives a list of lecture tasks for the specified user and course, including task name and status"
+    }
+]

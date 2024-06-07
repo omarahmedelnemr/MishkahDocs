@@ -1,28 +1,160 @@
 [
     {
-        "endpoint":"/overview/finance",
+        "endpoint":"/overview/financials",
         "section":"overview",
-        "method":"POST",
-        "description":"Create New Community (Categories For Patients) Where Patients Can Post",
+        "method":"GET",
+        "description":"Get an overview on the financial status",
         "parameters":[
+            {
+                "paramName":"userID",
+                "paramType":"string",
+                "paramDescription":"The user ID"
+            }
+        ],
+        "requestExample":{
+            "userID":"12345"
+        },
+        "responseParameters":[
+            {
+                "paramName":"paid",
+                "paramType":"number",
+                "paramDescription":"The amount paid by the user"
+            },
+            {
+                "paramName":"total",
+                "paramType":"number",
+                "paramDescription":"The Totla amount that shout be paid by the user"
+            },
+            {
+                "paramName":"remaining",
+                "paramType":"number",
+                "paramDescription":"The remaining amount to be paid by the user"
+            }
+        ],
+        "responseExample":{
+            "paid":1000,
+            "total":500,
+            "remaining":200
+        },
+        "responseDescription":"Receives paid, total, and remaining amounts for the user's financial status"
+    },
+    {
+        "endpoint":"/overview/assignments_overview",
+        "section":"overview",
+        "method":"GET",
+        "description":"Get an overview on the assignments that the user has, maximum of 4 assignments",
+        "parameters":[
+            {
+                "paramName":"userID",
+                "paramType":"string",
+                "paramDescription":"The user ID"
+            }
+        ],
+        "requestExample":{
+            "userID":"12345"
+        },
+        "responseParameters":[
             {
                 "paramName":"name",
                 "paramType":"string",
-                "paramDescription":"The Name or The Title of the Community"
+                "paramDescription":"The name of the assignment"
             },
             {
-                "paramName":"description",
-                "paramType":"String",
-                "paramDescription":"a Quick Description about this Community"
+                "paramName":"track",
+                "paramType":"string",
+                "paramDescription":"The track of the assignment"
+            },
+            {
+                "paramName":"date",
+                "paramType":"Date",
+                "paramDescription":"The date of the assignment"
+            },
+            {
+                "paramName":"status",
+                "paramType":"string",
+                "paramDescription":"The status of the assignment"
             }
-            
+        ],
+        "responseExample":[
+            {
+                "name":"Math Homework",
+                "track":"Chapter 1",
+                "date":"2024-06-10",
+                "status":"Completed"
+            },
+            {
+                "name":"Science Project",
+                "track":"Lab Work",
+                "date":"2024-06-12",
+                "status":"Pending"
+            }
+        ],
+        "responseDescription":"Receives a list of up to 4 assignments with their name, track, date, and status"
+    },
+    {
+        "endpoint":"/overview/statistics_overview",
+        "section":"overview",
+        "method":"GET",
+        "description":"Get an overview for the user like how many assignments are left and his/her attendance records",
+        "parameters":[
+            {
+                "paramName":"userID",
+                "paramType":"string",
+                "paramDescription":"The user ID"
+            }
         ],
         "requestExample":{
-            "name":"Addiction",
-            "description":"This Community Talk About Addictions In General"
+            "userID":"12345"
         },
-        "responseExample":"Done",
-        "responseDescription":"Receives 'Done' if every Thing Went Well, or one of the Common Errors"
+        "responseParameters":[
+            {
+                "paramName":"assignments",
+                "paramType":"integer",
+                "paramDescription":"The percentage of assignments done"
+            },
+            {
+                "paramName":"attendance",
+                "paramType":"integer",
+                "paramDescription":"The attendance percentage of the user"
+            },
+            {
+                "paramName":"payment",
+                "paramType":"integer",
+                "paramDescription":"The percentage of payments made by the user"
+            }
+        ],
+        "responseExample":{
+            "assignments":50,
+            "attendance":90,
+            "payment":80
+        },
+        "responseDescription":"Receives assignment completion percentage, attendance percentage, and payment percentage for the user"
+    },
+    {
+        "endpoint":"/overview/next_lecture",
+        "section":"overview",
+        "method":"GET",
+        "description":"Get the date of the next lecture",
+        "parameters":[
+            {
+                "paramName":"userID",
+                "paramType":"string",
+                "paramDescription":"The user ID"
+            }
+        ],
+        "requestExample":{
+            "userID":"12345"
+        },
+        "responseParameters":[
+            {
+                "paramName":"lectureDate",
+                "paramType":"string",
+                "paramDescription":"The date of the next lecture"
+            }
+        ],
+        "responseExample":{
+            "lectureDate":"2024-06-15T10:00:00.000Z"
+        },
+        "responseDescription":"Receives the date and time of the user's next lecture"
     }
-    
 ]

@@ -1,0 +1,62 @@
+[
+    {
+        "endpoint": "/settings/change_username",
+        "section": "settings",
+        "method": "POST",
+        "description": "Change the user's username used in the login process",
+        "parameters": [
+            {
+                "paramName": "oldUsername",
+                "paramType": "string",
+                "paramDescription": "The user's current username"
+            },
+            {
+                "paramName": "password",
+                "paramType": "string",
+                "paramDescription": "The user's password for authentication"
+            },
+            {
+                "paramName": "newUsername",
+                "paramType": "string",
+                "paramDescription": "The new username to be set"
+            }
+        ],
+        "requestExample": {
+            "oldUsername": "oldUser123",
+            "password": "password123",
+            "newUsername": "newUser456"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the username is successfully changed, or one of the common errors"
+    },
+    {
+        "endpoint": "/settings/change_password",
+        "section": "settings",
+        "method": "POST",
+        "description": "Change the user's password, either during the first login or if the user wants to change it",
+        "parameters": [
+            {
+                "paramName": "userID",
+                "paramType": "string",
+                "paramDescription": "The user's ID for identification"
+            },
+            {
+                "paramName": "oldPassword",
+                "paramType": "string",
+                "paramDescription": "The user's current password"
+            },
+            {
+                "paramName": "newPassword",
+                "paramType": "string",
+                "paramDescription": "The new password to be set"
+            }
+        ],
+        "requestExample": {
+            "userID": "user123",
+            "oldPassword": "oldpass123",
+            "newPassword": "newpass456"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the password is successfully changed, or one of the common errors"
+    }
+]
