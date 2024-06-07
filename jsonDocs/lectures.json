@@ -3,16 +3,16 @@
         "endpoint":"lectures/lectures",
         "section":"lectures",
         "method":"GET",
-        "description":"Get the list of lectures by course",
+        "description":"Get the list of lectures by track",
         "parameters":[
             {
-                "paramName":"courseID",
+                "paramName":"trackID",
                 "paramType":"string",
-                "paramDescription":"The course ID"
+                "paramDescription":"The track ID"
             }
         ],
         "requestExample":{
-            "courseID":"12345"
+            "trackID":"12345"
         },
         "responseParameters":[
             {
@@ -43,7 +43,7 @@
                 "lectureDate":"2024-06-12T09:00:00.000Z"
             }
         ],
-        "responseDescription":"Receives a list of lectures for the specified course, including lecture ID, name, and date"
+        "responseDescription":"Receives a list of lectures for the specified track, including lecture ID, name, and date"
     },
     {
         "endpoint":"lectures/lecture_materials",
@@ -52,13 +52,13 @@
         "description":"Get the list of lecture materials",
         "parameters":[
             {
-                "paramName":"courseID",
+                "paramName":"trackID",
                 "paramType":"string",
-                "paramDescription":"The course ID"
+                "paramDescription":"The track ID"
             }
         ],
         "requestExample":{
-            "courseID":"12345"
+            "trackID":"12345"
         },
         "responseParameters":[
             {
@@ -82,7 +82,7 @@
                 "materialType":"MP4"
             }
         ],
-        "responseDescription":"Receives a list of lecture materials for the specified course, including material name and type"
+        "responseDescription":"Receives a list of lecture materials for the specified track, including material name and type"
     },
     {
         "endpoint":"lectures/lecture_tasks",
@@ -96,14 +96,14 @@
                 "paramDescription":"The user ID to determine whether the user has completed the tasks"
             },
             {
-                "paramName":"courseID",
+                "paramName":"trackID",
                 "paramType":"string",
-                "paramDescription":"The course ID"
+                "paramDescription":"The track ID"
             }
         ],
         "requestExample":{
             "userID":"12345",
-            "courseID":"67890"
+            "trackID":"67890"
         },
         "responseParameters":[
             {
@@ -127,6 +127,6 @@
                 "taskStatus":"Pending"
             }
         ],
-        "responseDescription":"Receives a list of lecture tasks for the specified user and course, including task name and status"
+        "responseDescription":"Receives a list of lecture tasks for the specified user and track, including task name and status"
     }
 ]

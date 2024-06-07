@@ -1,6 +1,6 @@
 [
     {
-        "endpoint":"/tracks/enrolled_courses",
+        "endpoint":"/tracks/enrolled_tracks",
         "section":"tracks",
         "method":"GET",
         "description":"Get the list of tracks that the user is enrolled into",
@@ -39,13 +39,13 @@
         "responseExample":[
             {
                 "trackName":"Python Programming",
-                "trackDescription":"An introductory course to Python programming.",
+                "trackDescription":"An introductory track to Python programming.",
                 "trackLectureNumber":10,
                 "trackFirstLectureDate":"2024-01-15"
             },
             {
                 "trackName":"Data Science",
-                "trackDescription":"A comprehensive course on data science concepts and tools.",
+                "trackDescription":"A comprehensive track on data science concepts and tools.",
                 "trackLectureNumber":15,
                 "trackFirstLectureDate":"2024-02-01"
             }
@@ -92,7 +92,7 @@
         "responseExample":[
             {
                 "trackName":"Machine Learning",
-                "trackDescription":"A course on machine learning algorithms and applications.",
+                "trackDescription":"A track on machine learning algorithms and applications.",
                 "trackLectureNumber":12,
                 "trackFirstLectureDate":"2024-03-10"
             },
