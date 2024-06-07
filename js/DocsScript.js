@@ -127,6 +127,4 @@ $("#show_leftMenu_buttom").click(()=>{
     }
 })
 
-console.log(JSON.stringify(jsonData[0].responseExample))
-
 
