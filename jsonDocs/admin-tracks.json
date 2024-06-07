@@ -7,12 +7,12 @@
         "parameters": [
             {
                 "paramName": "adminID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The ID of the admin"
             }
         ],
         "requestExample": {
-            "adminID": "admin123"
+            "adminID": 123
         },
         "responseParameters": [
             {
@@ -60,7 +60,7 @@
         "parameters": [
             {
                 "paramName": "trackID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The ID of the track"
             },
             {
@@ -70,7 +70,7 @@
             }
         ],
         "requestExample": {
-            "trackID": "track001",
+            "trackID": 324,
             "newDate": "Tuesday"
         },
         "responseExample": "Done",

@@ -37,7 +37,7 @@
         "parameters": [
             {
                 "paramName": "userID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The user's ID for identification"
             },
             {
@@ -52,7 +52,7 @@
             }
         ],
         "requestExample": {
-            "userID": "user123",
+            "userID": 123,
             "oldPassword": "oldpass123",
             "newPassword": "newpass456"
         },

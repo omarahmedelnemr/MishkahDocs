@@ -7,12 +7,12 @@
         "parameters": [
             {
                 "paramName": "lectureID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The ID of the lecture"
             }
         ],
         "requestExample": {
-            "lectureID": "lecture001"
+            "lectureID": 43
         },
         "responseParameters": [
             {
@@ -38,7 +38,7 @@
                     "type": "object",
                     "properties": {
                         "userID": {
-                            "type": "string",
+                            "type": "integer",
                             "description": "The ID of the user"
                         },
                         "username": {
@@ -59,12 +59,12 @@
             "notPaid": 3,
             "people": [
                 {
-                    "userID": "user001",
+                    "userID": 41,
                     "username": "johndoe",
                     "status": "paid"
                 },
                 {
-                    "userID": "user002",
+                    "userID": 64,
                     "username": "janedoe",
                     "status": "wallet"
                 }
@@ -80,7 +80,7 @@
         "parameters": [
             {
                 "paramName": "lectureID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The ID of the lecture"
             },
             {
@@ -91,11 +91,11 @@
                     "type": "object",
                     "properties": {
                         "userID": {
-                            "type": "string",
+                            "type": "integer",
                             "description": "The ID of the user"
                         },
                         "status": {
-                            "type": "string",
+                            "type": "integer",
                             "description": "The financial status (if it was recorded, otherwise it is Null)"
                         }
                     }
@@ -103,14 +103,14 @@
             }
         ],
         "requestExample": {
-            "lectureID": "lecture001",
+            "lectureID": 532,
             "people": [
                 {
-                    "userID": "user001",
+                    "userID": 22,
                     "status": "paid"
                 },
                 {
-                    "userID": "user002",
+                    "userID": 52,
                     "status": "wallet"
                 }
             ]

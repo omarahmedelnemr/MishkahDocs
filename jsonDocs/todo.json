@@ -7,17 +7,17 @@
         "parameters":[
             {
                 "paramName":"userID",
-                "paramType":"string",
+                "paramType":"integer",
                 "paramDescription":"The user ID"
             }
         ],
         "requestExample":{
-            "userID":"12345"
+            "userID":123
         },
         "responseParameters":[
             {
                 "paramName":"taskID",
-                "paramType":"string",
+                "paramType":"integer",
                 "paramDescription":"The ID of the task"
             },
             {
@@ -43,14 +43,14 @@
         ],
         "responseExample":[
             {
-                "taskID":"001",
+                "taskID":2,
                 "taskName":"Assignment 1",
                 "taskTrack":"Mathematics",
                 "taskLecture":"Calculus",
                 "taskDate":"2024-06-15"
             },
             {
-                "taskID":"002",
+                "taskID":3,
                 "taskName":"Project Proposal",
                 "taskTrack":"Computer Science",
                 "taskLecture":"Algorithms",
@@ -67,17 +67,17 @@
         "parameters":[
             {
                 "paramName":"userID",
-                "paramType":"string",
+                "paramType":"integer",
                 "paramDescription":"The user ID"
             }
         ],
         "requestExample":{
-            "userID":"12345"
+            "userID":123
         },
         "responseParameters":[
             {
                 "paramName":"taskID",
-                "paramType":"string",
+                "paramType":"integer",
                 "paramDescription":"The ID of the task"
             },
             {
@@ -103,14 +103,14 @@
         ],
         "responseExample":[
             {
-                "taskID":"003",
+                "taskID":3,
                 "taskName":"Assignment 2",
                 "taskTrack":"Mathematics",
                 "taskLecture":"Algebra",
                 "taskDate":"2024-06-20"
             },
             {
-                "taskID":"004",
+                "taskID":4,
                 "taskName":"Quiz",
                 "taskTrack":"Computer Science",
                 "taskLecture":"Data Structures",
@@ -127,18 +127,18 @@
         "parameters":[
             {
                 "paramName":"userID",
-                "paramType":"string",
+                "paramType":"integer",
                 "paramDescription":"The user ID"
             },
             {
                 "paramName":"taskID",
-                "paramType":"string",
+                "paramType":"integer",
                 "paramDescription":"The ID of the task to mark as done"
             }
         ],
         "requestExample":{
-            "userID":"12345",
-            "taskID":"001"
+            "userID":23,
+            "taskID":2
         },
         "responseExample":"Done",
         "responseDescription":"Receives 'Done' if the task is successfully marked as done or one of the common errors"
@@ -151,18 +151,18 @@
         "parameters":[
             {
                 "paramName":"userID",
-                "paramType":"string",
+                "paramType":"integer",
                 "paramDescription":"The user ID"
             },
             {
                 "paramName":"taskID",
-                "paramType":"string",
+                "paramType":"integer",
                 "paramDescription":"The ID of the task to mark as not done"
             }
         ],
         "requestExample":{
-            "userID":"12345",
-            "taskID":"001"
+            "userID":123,
+            "taskID":1
         },
         "responseExample":"Done",
         "responseDescription":"Receives 'Done' if the task is successfully marked as not done or one of the common errors"

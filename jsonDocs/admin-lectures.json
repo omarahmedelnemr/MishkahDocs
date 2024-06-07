@@ -7,17 +7,17 @@
         "parameters": [
             {
                 "paramName": "trackID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The ID of the track"
             }
         ],
         "requestExample": {
-            "trackID": "track123"
+            "trackID": 123
         },
         "responseParameters": [
             {
                 "paramName": "lectureID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The ID of the lecture"
             },
             {
@@ -33,12 +33,12 @@
         ],
         "responseExample": [
             {
-                "lectureID": "lecture001",
+                "lectureID": 234,
                 "lectureName": "Introduction to Data Science",
                 "LectureDate": "2024-07-01"
             },
             {
-                "lectureID": "lecture002",
+                "lectureID": 987,
                 "lectureName": "Advanced Data Analysis",
                 "LectureDate": "2024-07-08"
             }
@@ -53,14 +53,19 @@
         "parameters": [
             {
                 "paramName": "trackID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The ID of the track"
             }
         ],
         "requestExample": {
-            "trackID": "track123"
+            "trackID": 123
         },
         "responseParameters": [
+            {
+                "paramName": "taskID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the task"
+            },
             {
                 "paramName": "taskName",
                 "paramType": "string",
@@ -74,10 +79,12 @@
         ],
         "responseExample": [
             {
+                "taskID":1,
                 "taskName": "Complete Assignment 1",
                 "taskStatus": "Pending"
             },
             {
+                "taskID":2,
                 "taskName": "Read Chapter 2",
                 "taskStatus": "Completed"
             }
@@ -92,12 +99,12 @@
         "parameters": [
             {
                 "paramName": "trackID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The ID of the track"
             }
         ],
         "requestExample": {
-            "trackID": "track123"
+            "trackID": 123
         },
         "responseParameters": [
             {
@@ -131,7 +138,7 @@
         "parameters": [
             {
                 "paramName": "trackID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The ID of the track"
             },
             {
@@ -146,7 +153,7 @@
             }
         ],
         "requestExample": {
-            "trackID": "track123",
+            "trackID": 123,
             "LectureTitle": "New Lecture",
             "LectureDate": "2024-07-15"
         },
@@ -161,7 +168,7 @@
         "parameters": [
             {
                 "paramName": "lectureID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The ID of the lecture the task is related to"
             },
             {
@@ -171,7 +178,7 @@
             }
         ],
         "requestExample": {
-            "lectureID": "lecture001",
+            "lectureID": 32,
             "taskText": "Complete the assignment"
         },
         "responseExample": "Done",
@@ -185,7 +192,7 @@
         "parameters": [
             {
                 "paramName": "lectureID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The ID of the lecture the material is related to"
             },
             {
@@ -200,7 +207,7 @@
             }
         ],
         "requestExample": {
-            "lectureID": "lecture001",
+            "lectureID": 42,
             "materialTitle": "Lecture Slides",
             "materialType": "document"
         },

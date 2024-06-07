@@ -80,7 +80,7 @@
         "parameters": [
             {
                 "paramName": "adminID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The ID of the admin"
             },
             {
@@ -94,7 +94,7 @@
             }
         ],
         "requestExample": {
-            "adminID": "admin001",
+            "adminID": 123,
             "permissions": ["permission1", "permission3"]
         },
         "responseExample": "Done",
@@ -108,7 +108,7 @@
         "parameters": [
             {
                 "paramName": "adminID",
-                "paramType": "string",
+                "paramType": "integer",
                 "paramDescription": "The ID of the admin"
             },
             {
@@ -118,7 +118,7 @@
             }
         ],
         "requestExample": {
-            "adminID": "admin001",
+            "adminID": 123,
             "superAdminPasscode": "superpasscode123"
         },
         "responseExample": "Done",

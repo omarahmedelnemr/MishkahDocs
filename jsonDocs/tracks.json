@@ -7,12 +7,12 @@
         "parameters":[
             {
                 "paramName":"userID",
-                "paramType":"string",
+                "paramType":"integer",
                 "paramDescription":"The user ID"
             }
         ],
         "requestExample":{
-            "userID":"12345"
+            "userID":123
         },
         "responseParameters":[
             {
@@ -60,12 +60,12 @@
         "parameters":[
             {
                 "paramName":"userID",
-                "paramType":"string",
+                "paramType":"integer",
                 "paramDescription":"The user ID"
             }
         ],
         "requestExample":{
-            "userID":"12345"
+            "userID":123
         },
         "responseParameters":[
             {
