@@ -128,6 +128,16 @@ pre{
     font-weight: 500;
     color: #2a8f9b;
 }
+.left-menu::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    background-color: transparent; /* Background color behind the scrollbar */
+}
+
+.left-menu::-webkit-scrollbar-thumb {
+    background-color: rgb(179, 179, 179); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Border radius to make the scrollbar thumb curved */
+}
+
 .content-logo{
     position: relative;
     display: block;
@@ -150,7 +160,7 @@ pre{
     font-size: 1.1em;
 }
 .content-menu{
-    margin: 2em auto 2em;
+    /* margin: 2em auto 2em; */
     padding: 0 0 100px;
 }
 .content-menu ul{
