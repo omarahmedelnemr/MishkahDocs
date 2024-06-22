@@ -9,9 +9,15 @@
                 "paramName":"userID",
                 "paramType":"integer",
                 "paramDescription":"The user ID"
+            },
+            {
+                "paramName": "trackID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the track"
             }
         ],
         "requestExample":{
+            "trackID":1,
             "userID":123
         },
         "responseParameters":[
@@ -26,15 +32,21 @@
                 "paramDescription":"The Totla amount that shout be paid by the user"
             },
             {
-                "paramName":"remaining",
+                "paramName":"late",
                 "paramType":"number",
-                "paramDescription":"The remaining amount to be paid by the user"
+                "paramDescription":"The amount Not Paid yet by the user"
+            },
+            {
+                "paramName":"wallet",
+                "paramType":"number",
+                "paramDescription":"The amount The User Have on Our Wallet"
             }
         ],
         "responseExample":{
             "paid":1000,
+            "late":120,
             "total":500,
-            "remaining":200
+            "wallet":200
         },
         "responseDescription":"Receives paid, total, and remaining amounts for the user's financial status"
     },
@@ -77,16 +89,24 @@
         ],
         "responseExample":[
             {
-                "name":"Math Homework",
-                "track":"Chapter 1",
-                "date":"2024-06-10",
-                "status":"Completed"
+                "id":1,
+                "title":"Math Homework",
+                "track":"Meshkah",
+                "done":false,
+                "lecture":{
+                    "title":"Lecture 1",
+                    "date":"2024-06-12"
+                }
             },
             {
-                "name":"Science Project",
-                "track":"Lab Work",
-                "date":"2024-06-12",
-                "status":"Pending"
+                "id":2,
+                "title":"Math Homework 2",
+                "track":"Meshkah",
+                "done":false,
+                "lecture":{
+                    "title":"Lecture 2",
+                    "date":"2024-06-22"
+                }
             }
         ],
         "responseDescription":"Receives a list of up to 4 assignments with their name, track, date, and status"
@@ -101,10 +121,16 @@
                 "paramName":"userID",
                 "paramType":"integer",
                 "paramDescription":"The user ID"
+            },
+            {
+                "paramName": "trackID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the track"
             }
         ],
         "requestExample":{
-            "userID":231
+            "userID":231,
+            "trackID":1
         },
         "responseParameters":[
             {
@@ -136,24 +162,25 @@
         "method":"GET",
         "description":"Get the date of the next lecture",
         "parameters":[
+            
             {
-                "paramName":"userID",
-                "paramType":"integer",
-                "paramDescription":"The user ID"
+                "paramName": "trackID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the track"
             }
         ],
         "requestExample":{
-            "userID":1245
+            "trackID":2
         },
         "responseParameters":[
             {
-                "paramName":"lectureDate",
+                "paramName":"nextLecture",
                 "paramType":"string",
                 "paramDescription":"The date of the next lecture"
             }
         ],
         "responseExample":{
-            "lectureDate":"2024-06-15T10:00:00.000Z"
+            "nextLecture":"2024-06-15T10:00:00.000Z"
         },
         "responseDescription":"Receives the date and time of the user's next lecture"
     }

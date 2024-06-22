@@ -16,66 +16,33 @@
         },
         "responseParameters":[
             {
+                "paramName":"title",
+                "paramType":"string",
+                "paramDescription":"The name of the lecture"
+            },
+            {
+                "paramName":"date",
+                "paramType":"date",
+                "paramDescription":"The date of the lecture"
+            },
+            {
                 "paramName":"attended",
-                "paramType":"integer",
-                "paramDescription":"The number of times the user attended lectures"
-            },
-            {
-                "paramName":"late",
-                "paramType":"integer",
-                "paramDescription":"The number of times the user was late for lectures"
-            },
-            {
-                "paramName":"absent",
-                "paramType":"integer",
-                "paramDescription":"The number of times the user was absent from lectures"
-            },
-            {
-                "paramName":"excuse",
-                "paramType":"integer",
-                "paramDescription":"The number of times the user had an excuse for missing lectures"
-            },
-            {
-                "paramName":"lectures",
-                "paramType":"array",
-                "paramDescription":"A list of lectures attended or missed by the user",
-                "nestedParameters":[
-                    {
-                        "paramName":"lectureName",
-                        "paramType":"string",
-                        "paramDescription":"The name of the lecture"
-                    },
-                    {
-                        "paramName":"lectureDate",
-                        "paramType":"string",
-                        "paramDescription":"The date of the lecture"
-                    },
-                    {
-                        "paramName":"status",
-                        "paramType":"string",
-                        "paramDescription":"The attendance status of the user for the lecture (Attended, Late, Absent, Excused)"
-                    }
-                ]
+                "paramType":"boolean",
+                "paramDescription":"The attendance status of the user for the lecture (Attended, Late, Absent, Excused)"
             }
         ],
-        "responseExample":{
-            "attended":10,
-            "late":2,
-            "absent":3,
-            "excuse":1,
-            "lectures":[
-                {
-                    "lectureName":"Introduction to Programming",
-                    "lectureDate":"2024-06-10T09:00:00.000Z",
-                    "status":"Attended"
-                },
-                {
-                    "lectureName":"Data Structures",
-                    "lectureDate":"2024-06-12T09:00:00.000Z",
-                    "status":"Late"
-                }
-            ]
-        },
+        "responseExample":[
+            {
+                "title": "lec 1",
+                "date": "2024-06-19T14:53:37.000Z",
+                "attended": 1
+            },
+            {
+                "title": "lec 2",
+                "date": "2024-06-19T14:53:38.000Z",
+                "attended": 0
+            }
+        ],
         "responseDescription":"Receives the attendance records and statistics for the user, including the number of times attended, late, absent, and with excuse, and a list of lectures with their status"
     }
 ]

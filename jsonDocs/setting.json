@@ -6,9 +6,9 @@
         "description": "Change the user's username used in the login process",
         "parameters": [
             {
-                "paramName": "oldUsername",
-                "paramType": "string",
-                "paramDescription": "The user's current username"
+                "paramName": "userID",
+                "paramType": "number",
+                "paramDescription": "The user's ID"
             },
             {
                 "paramName": "password",
@@ -22,7 +22,7 @@
             }
         ],
         "requestExample": {
-            "oldUsername": "oldUser123",
+            "userID": 12,
             "password": "password123",
             "newUsername": "newUser456"
         },

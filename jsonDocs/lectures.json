@@ -16,31 +16,31 @@
         },
         "responseParameters":[
             {
-                "paramName":"lectureID",
+                "paramName":"id",
                 "paramType":"string",
                 "paramDescription":"The ID of the lecture"
             },
             {
-                "paramName":"lectureName",
+                "paramName":"title",
                 "paramType":"string",
                 "paramDescription":"The name of the lecture"
             },
             {
-                "paramName":"lectureDate",
+                "paramName":"date",
                 "paramType":"string",
                 "paramDescription":"The date of the lecture"
             }
         ],
         "responseExample":[
             {
-                "lectureID":"001",
-                "lectureName":"Introduction to Programming",
-                "lectureDate":"2024-06-10T09:00:00.000Z"
+                "id": 1,
+                "title": "lec 1",
+                "date": "2024-06-19T14:53:37.000Z"
             },
             {
-                "lectureID":"002",
-                "lectureName":"Data Structures",
-                "lectureDate":"2024-06-12T09:00:00.000Z"
+                "id": 2,
+                "title": "lec 2",
+                "date": "2024-06-19T14:53:38.000Z"
             }
         ],
         "responseDescription":"Receives a list of lectures for the specified track, including lecture ID, name, and date"
@@ -52,34 +52,41 @@
         "description":"Get the list of lecture materials",
         "parameters":[
             {
-                "paramName":"trackID",
-                "paramType":"string",
-                "paramDescription":"The track ID"
+                "paramName":"lectureID",
+                "paramType":"number",
+                "paramDescription":"The Lecture ID"
             }
         ],
         "requestExample":{
-            "trackID":"12345"
+            "lectureID":12345
         },
         "responseParameters":[
             {
-                "paramName":"materialName",
+                "paramName":"id",
+                "paramType":"number",
+                "paramDescription":"The ID of the material"
+            },
+            {
+                "paramName":"title",
                 "paramType":"string",
                 "paramDescription":"The name of the material"
             },
             {
-                "paramName":"materialType",
+                "paramName":"link",
                 "paramType":"string",
-                "paramDescription":"The type of the material"
+                "paramDescription":"The Link of the material"
             }
         ],
         "responseExample":[
             {
-                "materialName":"Slides",
-                "materialType":"PDF"
+                "id": 1,
+                "title": " Z Book",
+                "link": "http://"
             },
             {
-                "materialName":"Video Recording",
-                "materialType":"MP4"
+                "id": 2,
+                "title": " Z Book 1",
+                "link": "http://"
             }
         ],
         "responseDescription":"Receives a list of lecture materials for the specified track, including material name and type"
@@ -96,35 +103,52 @@
                 "paramDescription":"The user ID to determine whether the user has completed the tasks"
             },
             {
-                "paramName":"trackID",
-                "paramType":"string",
-                "paramDescription":"The track ID"
+                "paramName":"lectureID",
+                "paramType":"number",
+                "paramDescription":"The Lecture ID"
             }
         ],
         "requestExample":{
-            "userID":"12345",
-            "trackID":"67890"
+            "userID":12345,
+            "lectureID":67890
         },
         "responseParameters":[
             {
-                "paramName":"taskName",
+                "paramName":"id",
+                "paramType":"string",
+                "paramDescription":"The ID of the task"
+            },
+            {
+                "paramName":"title",
                 "paramType":"string",
                 "paramDescription":"The name of the task"
             },
             {
-                "paramName":"taskStatus",
-                "paramType":"string",
-                "paramDescription":"The status of the task (e.g., completed, pending)"
+                "paramName":"done",
+                "paramType":"boolean",
+                "paramDescription":"The status of the task Done or not"
             }
         ],
         "responseExample":[
             {
-                "taskName":"Assignment 1",
-                "taskStatus":"Completed"
+                "id": 1,
+                "title": "Solve the Puzzle",
+                "done": true
             },
             {
-                "taskName":"Assignment 2",
-                "taskStatus":"Pending"
+                "id": 5,
+                "title": "read 20",
+                "done": false
+            },
+            {
+                "id": 6,
+                "title": "read 5",
+                "done": false
+            },
+            {
+                "id": 7,
+                "title": "read 2",
+                "done": false
             }
         ],
         "responseDescription":"Receives a list of lecture tasks for the specified user and track, including task name and status"

@@ -16,38 +16,66 @@
         },
         "responseParameters":[
             {
-                "paramName":"trackName",
+                "paramName":"id",
+                "paramType":"number",
+                "paramDescription":"the ID of the Track"
+            },
+            {
+                "paramName":"name",
                 "paramType":"string",
                 "paramDescription":"The name of the track"
             },
             {
-                "paramName":"trackDescription",
+                "paramName":"description",
                 "paramType":"string",
                 "paramDescription":"The description of the track"
             },
             {
-                "paramName":"trackLectureNumber",
+                "paramName":"lecturesCount",
                 "paramType":"integer",
                 "paramDescription":"The number of lectures in the track"
             },
             {
-                "paramName":"trackFirstLectureDate",
+                "paramName":"attendingExpensis",
+                "paramType":"float",
+                "paramDescription":"the approxemet Value of Lecture Attending Price"
+            },
+            {
+                "paramName":"openForEnrollment",
+                "paramType":"boolean",
+                "paramDescription":"Wheather the Track is Open For Enrollment or not"
+            },
+            {
+                "paramName":"lectureDay",
                 "paramType":"string",
-                "paramDescription":"The date of the first lecture in the track"
+                "paramDescription":"The Day date of the lecture in the track"
+            },
+            {
+                "paramName":"lectureTime",
+                "paramType":"string",
+                "paramDescription":"The Time date of the lecture in the track"
             }
         ],
         "responseExample":[
             {
-                "trackName":"Python Programming",
-                "trackDescription":"An introductory track to Python programming.",
-                "trackLectureNumber":10,
-                "trackFirstLectureDate":"2024-01-15"
+                "id": 1,
+                "description": "",
+                "name": "Taqween",
+                "lecturesCount": 12,
+                "attendingExpensis": 15,
+                "openForEnrollment": true,
+                "lectureDay": "Sunday",
+                "lectureTime": "40PM"
             },
             {
-                "trackName":"Data Science",
-                "trackDescription":"A comprehensive track on data science concepts and tools.",
-                "trackLectureNumber":15,
-                "trackFirstLectureDate":"2024-02-01"
+                "id": 2,
+                "description": "This is a Track Description",
+                "name": "Taqween 2",
+                "lecturesCount": 12,
+                "attendingExpensis": 15,
+                "openForEnrollment": true,
+                "lectureDay": "Tuesday",
+                "lectureTime": "40PM"
             }
         ],
         "responseDescription":"Receives a list of tracks the user is enrolled in, including the track name, description, number of lectures, and the date of the first lecture"
@@ -69,38 +97,66 @@
         },
         "responseParameters":[
             {
-                "paramName":"trackName",
+                "paramName":"id",
+                "paramType":"number",
+                "paramDescription":"the ID of the Track"
+            },
+            {
+                "paramName":"name",
                 "paramType":"string",
                 "paramDescription":"The name of the track"
             },
             {
-                "paramName":"trackDescription",
+                "paramName":"description",
                 "paramType":"string",
                 "paramDescription":"The description of the track"
             },
             {
-                "paramName":"trackLectureNumber",
+                "paramName":"lecturesCount",
                 "paramType":"integer",
                 "paramDescription":"The number of lectures in the track"
             },
             {
-                "paramName":"trackFirstLectureDate",
+                "paramName":"attendingExpensis",
+                "paramType":"float",
+                "paramDescription":"the approxemet Value of Lecture Attending Price"
+            },
+            {
+                "paramName":"openForEnrollment",
+                "paramType":"boolean",
+                "paramDescription":"Wheather the Track is Open For Enrollment or not"
+            },
+            {
+                "paramName":"lectureDay",
                 "paramType":"string",
-                "paramDescription":"The date of the first lecture in the track"
+                "paramDescription":"The Day date of the lecture in the track"
+            },
+            {
+                "paramName":"lectureTime",
+                "paramType":"string",
+                "paramDescription":"The Time date of the lecture in the track"
             }
         ],
         "responseExample":[
             {
-                "trackName":"Machine Learning",
-                "trackDescription":"A track on machine learning algorithms and applications.",
-                "trackLectureNumber":12,
-                "trackFirstLectureDate":"2024-03-10"
+                "id": 1,
+                "description": "",
+                "name": "Taqween",
+                "lecturesCount": 12,
+                "attendingExpensis": 15,
+                "openForEnrollment": true,
+                "lectureDay": "Sunday",
+                "lectureTime": "40PM"
             },
             {
-                "trackName":"Web Development",
-                "trackDescription":"A complete guide to web development using modern technologies.",
-                "trackLectureNumber":20,
-                "trackFirstLectureDate":"2024-04-05"
+                "id": 2,
+                "description": "This is a Track Description",
+                "name": "Taqween 2",
+                "lecturesCount": 12,
+                "attendingExpensis": 15,
+                "openForEnrollment": true,
+                "lectureDay": "Tuesday",
+                "lectureTime": "40PM"
             }
         ],
         "responseDescription":"Receives a list of tracks the user can enroll in, including the track name, description, number of lectures, and the date of the first lecture"

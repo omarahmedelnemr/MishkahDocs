@@ -16,45 +16,61 @@
         },
         "responseParameters":[
             {
-                "paramName":"taskID",
+                "paramName":"id",
                 "paramType":"integer",
                 "paramDescription":"The ID of the task"
             },
             {
-                "paramName":"taskName",
+                "paramName":"title",
                 "paramType":"string",
                 "paramDescription":"The name of the task"
             },
             {
-                "paramName":"taskTrack",
+                "paramName":"track",
                 "paramType":"string",
                 "paramDescription":"The track of the task"
             },
             {
-                "paramName":"taskLecture",
-                "paramType":"string",
-                "paramDescription":"The lecture associated with the task"
+                "paramName":"lecture",
+                "paramType":"object",
+                "paramDescription":"The lecture Title and Date associated with the task"
             },
             {
-                "paramName":"taskDate",
-                "paramType":"string",
-                "paramDescription":"The date of the task"
+                "paramName":"done",
+                "paramType":"boolean",
+                "paramDescription":"Wheather the Task is Done or Not"
             }
         ],
         "responseExample":[
             {
-                "taskID":2,
-                "taskName":"Assignment 1",
-                "taskTrack":"Mathematics",
-                "taskLecture":"Calculus",
-                "taskDate":"2024-06-15"
+                "id": 5,
+                "title": "read 20",
+                "done": false,
+                "lecture": {
+                    "title": "lec 1",
+                    "date": "2024-06-19T14:53:37.000Z"
+                },
+                "track": "Taqween"
             },
             {
-                "taskID":3,
-                "taskName":"Project Proposal",
-                "taskTrack":"Computer Science",
-                "taskLecture":"Algorithms",
-                "taskDate":"2024-06-17"
+                "id": 6,
+                "title": "read 5",
+                "done": false,
+                "lecture": {
+                    "title": "lec 1",
+                    "date": "2024-06-19T14:53:37.000Z"
+                },
+                "track": "Taqween"
+            },
+            {
+                "id": 7,
+                "title": "read 2",
+                "done": false,
+                "lecture": {
+                    "title": "lec 1",
+                    "date": "2024-06-19T14:53:37.000Z"
+                },
+                "track": "Taqween"
             }
         ],
         "responseDescription":"Receives a list of tasks that the user hasn't done yet, including task ID, name, track, lecture, and date"
@@ -76,45 +92,41 @@
         },
         "responseParameters":[
             {
-                "paramName":"taskID",
+                "paramName":"id",
                 "paramType":"integer",
                 "paramDescription":"The ID of the task"
             },
             {
-                "paramName":"taskName",
+                "paramName":"title",
                 "paramType":"string",
                 "paramDescription":"The name of the task"
             },
             {
-                "paramName":"taskTrack",
+                "paramName":"track",
                 "paramType":"string",
                 "paramDescription":"The track of the task"
             },
             {
-                "paramName":"taskLecture",
-                "paramType":"string",
-                "paramDescription":"The lecture associated with the task"
+                "paramName":"lecture",
+                "paramType":"object",
+                "paramDescription":"The lecture Title and Date associated with the task"
             },
             {
-                "paramName":"taskDate",
-                "paramType":"string",
-                "paramDescription":"The date of the task"
+                "paramName":"done",
+                "paramType":"boolean",
+                "paramDescription":"Wheather the Task is Done or Not"
             }
         ],
         "responseExample":[
             {
-                "taskID":3,
-                "taskName":"Assignment 2",
-                "taskTrack":"Mathematics",
-                "taskLecture":"Algebra",
-                "taskDate":"2024-06-20"
-            },
-            {
-                "taskID":4,
-                "taskName":"Quiz",
-                "taskTrack":"Computer Science",
-                "taskLecture":"Data Structures",
-                "taskDate":"2024-06-22"
+                "id": 1,
+                "title": "Solve the Puzzle",
+                "done": true,
+                "lecture": {
+                    "title": "lec 1",
+                    "date": "2024-06-19T14:53:37.000Z"
+                },
+                "track": "Taqween"
             }
         ],
         "responseDescription":"Receives a list of tasks that the user has done, including task ID, name, track, lecture, and date"
@@ -126,19 +138,13 @@
         "description":"Mark a task as done",
         "parameters":[
             {
-                "paramName":"userID",
+                "paramName":"recordID",
                 "paramType":"integer",
-                "paramDescription":"The user ID"
-            },
-            {
-                "paramName":"taskID",
-                "paramType":"integer",
-                "paramDescription":"The ID of the task to mark as done"
+                "paramDescription":"The Task Record ID"
             }
         ],
         "requestExample":{
-            "userID":23,
-            "taskID":2
+            "recordID":23
         },
         "responseExample":"Done",
         "responseDescription":"Receives 'Done' if the task is successfully marked as done or one of the common errors"
@@ -150,19 +156,13 @@
         "description":"Mark a task as not done",
         "parameters":[
             {
-                "paramName":"userID",
+                "paramName":"recordID",
                 "paramType":"integer",
-                "paramDescription":"The user ID"
-            },
-            {
-                "paramName":"taskID",
-                "paramType":"integer",
-                "paramDescription":"The ID of the task to mark as not done"
+                "paramDescription":"The Task Record ID"
             }
         ],
         "requestExample":{
-            "userID":123,
-            "taskID":1
+            "recordID":23
         },
         "responseExample":"Done",
         "responseDescription":"Receives 'Done' if the task is successfully marked as not done or one of the common errors"
