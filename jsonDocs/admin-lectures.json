@@ -16,31 +16,31 @@
         },
         "responseParameters": [
             {
-                "paramName": "lectureID",
+                "paramName": "id",
                 "paramType": "integer",
                 "paramDescription": "The ID of the lecture"
             },
             {
-                "paramName": "lectureName",
+                "paramName": "title",
                 "paramType": "string",
                 "paramDescription": "The name of the lecture"
             },
             {
-                "paramName": "LectureDate",
+                "paramName": "date",
                 "paramType": "string",
                 "paramDescription": "The date of the lecture"
             }
         ],
         "responseExample": [
             {
-                "lectureID": 234,
-                "lectureName": "Introduction to Data Science",
-                "LectureDate": "2024-07-01"
+                "id": 1,
+                "title": "lec 1",
+                "date": "2024-06-19T14:53:37.000Z"
             },
             {
-                "lectureID": 987,
-                "lectureName": "Advanced Data Analysis",
-                "LectureDate": "2024-07-08"
+                "id": 2,
+                "title": "lec 2",
+                "date": "2024-06-19T14:53:38.000Z"
             }
         ],
         "responseDescription": "Receives a list of lectures in the specified track, including lecture ID, name, and date"
@@ -62,31 +62,44 @@
         },
         "responseParameters": [
             {
-                "paramName": "taskID",
+                "paramName": "id",
                 "paramType": "integer",
                 "paramDescription": "The ID of the task"
             },
             {
-                "paramName": "taskName",
+                "paramName": "title",
                 "paramType": "string",
                 "paramDescription": "The name of the task"
-            },
-            {
-                "paramName": "taskStatus",
-                "paramType": "string",
-                "paramDescription": "The status of the task"
             }
         ],
         "responseExample": [
             {
-                "taskID":1,
-                "taskName": "Complete Assignment 1",
-                "taskStatus": "Pending"
+                "id": 1,
+                "title": "Solve the Puzzle"
             },
             {
-                "taskID":2,
-                "taskName": "Read Chapter 2",
-                "taskStatus": "Completed"
+                "id": 2,
+                "title": "Read 40 Pages"
+            },
+            {
+                "id": 3,
+                "title": "Read 30"
+            },
+            {
+                "id": 4,
+                "title": "read 10"
+            },
+            {
+                "id": 5,
+                "title": "read 20"
+            },
+            {
+                "id": 6,
+                "title": "read 5"
+            },
+            {
+                "id": 7,
+                "title": "read 2"
             }
         ],
         "responseDescription": "Receives a list of tasks for the specified track, including task name and status"
@@ -108,24 +121,26 @@
         },
         "responseParameters": [
             {
-                "paramName": "materialName",
+                "paramName": "id",
+                "paramType": "integer",
+                "paramDescription": "The ID of the material"
+            },
+            {
+                "paramName": "title",
                 "paramType": "string",
                 "paramDescription": "The name of the material"
             },
             {
-                "paramName": "materialType",
+                "paramName": "link",
                 "paramType": "string",
-                "paramDescription": "The type of the material (video or document)"
+                "paramDescription": "The Link Path of the material (video or document)"
             }
         ],
         "responseExample": [
             {
-                "materialName": "Lecture 1 Slides",
-                "materialType": "document"
-            },
-            {
-                "materialName": "Lecture 1 Video",
-                "materialType": "video"
+                "id": 1,
+                "title": " Z Book",
+                "link": "http://"
             }
         ],
         "responseDescription": "Receives a list of materials for the specified track, including material name and type"
