@@ -14,24 +14,24 @@
         "requestExample": {
             "trackID": 123
         },
-        "responseParameters": [
+        "responseParameters":[
             {
-                "paramName": "id",
-                "paramType": "integer",
-                "paramDescription": "The ID of the lecture"
+                "paramName":"id",
+                "paramType":"string",
+                "paramDescription":"The ID of the lecture"
             },
             {
-                "paramName": "title",
-                "paramType": "string",
-                "paramDescription": "The name of the lecture"
+                "paramName":"title",
+                "paramType":"string",
+                "paramDescription":"The name of the lecture"
             },
             {
-                "paramName": "date",
-                "paramType": "string",
-                "paramDescription": "The date of the lecture"
+                "paramName":"date",
+                "paramType":"string",
+                "paramDescription":"The date of the lecture"
             }
         ],
-        "responseExample": [
+        "responseExample":[
             {
                 "id": 1,
                 "title": "lec 1",
@@ -50,56 +50,53 @@
         "section": "admin-lectures",
         "method": "GET",
         "description": "Get the list of lecture tasks",
-        "parameters": [
+        "parameters":[
             {
-                "paramName": "trackID",
-                "paramType": "integer",
-                "paramDescription": "The ID of the track"
+                "paramName":"lectureID",
+                "paramType":"number",
+                "paramDescription":"The Lecture ID"
             }
         ],
-        "requestExample": {
-            "trackID": 123
+        "requestExample":{
+            "lectureID":67890
         },
-        "responseParameters": [
+        "responseParameters":[
             {
-                "paramName": "id",
-                "paramType": "integer",
-                "paramDescription": "The ID of the task"
+                "paramName":"id",
+                "paramType":"string",
+                "paramDescription":"The ID of the task"
             },
             {
-                "paramName": "title",
-                "paramType": "string",
-                "paramDescription": "The name of the task"
+                "paramName":"title",
+                "paramType":"string",
+                "paramDescription":"The name of the task"
+            },
+            {
+                "paramName":"done",
+                "paramType":"boolean",
+                "paramDescription":"The status of the task Done or not in admin case, it is always False"
             }
         ],
-        "responseExample": [
+        "responseExample":[
             {
                 "id": 1,
-                "title": "Solve the Puzzle"
-            },
-            {
-                "id": 2,
-                "title": "Read 40 Pages"
-            },
-            {
-                "id": 3,
-                "title": "Read 30"
-            },
-            {
-                "id": 4,
-                "title": "read 10"
+                "title": "Solve the Puzzle",
+                "done": true
             },
             {
                 "id": 5,
-                "title": "read 20"
+                "title": "read 20",
+                "done": false
             },
             {
                 "id": 6,
-                "title": "read 5"
+                "title": "read 5",
+                "done": false
             },
             {
                 "id": 7,
-                "title": "read 2"
+                "title": "read 2",
+                "done": false
             }
         ],
         "responseDescription": "Receives a list of tasks for the specified track, including task name and status"
@@ -109,44 +106,56 @@
         "section": "admin-lectures",
         "method": "GET",
         "description": "Get the list of lecture materials",
-        "parameters": [
+        "parameters":[
             {
-                "paramName": "trackID",
-                "paramType": "integer",
-                "paramDescription": "The ID of the track"
+                "paramName":"lectureID",
+                "paramType":"number",
+                "paramDescription":"The Lecture ID"
             }
         ],
-        "requestExample": {
-            "trackID": 123
+        "requestExample":{
+            "lectureID":12345
         },
-        "responseParameters": [
+        "responseParameters":[
             {
-                "paramName": "id",
-                "paramType": "integer",
-                "paramDescription": "The ID of the material"
+                "paramName":"id",
+                "paramType":"number",
+                "paramDescription":"The ID of the material"
             },
             {
-                "paramName": "title",
-                "paramType": "string",
-                "paramDescription": "The name of the material"
+                "paramName":"title",
+                "paramType":"string",
+                "paramDescription":"The name of the material"
             },
             {
-                "paramName": "link",
-                "paramType": "string",
-                "paramDescription": "The Link Path of the material (video or document)"
+                "paramName":"video",
+                "paramType":"boolean",
+                "paramDescription":"Determine if the Material is a Video to Be Embedded or Just a Link"
+            },
+            {
+                "paramName":"link",
+                "paramType":"string",
+                "paramDescription":"The Link of the material"
             }
         ],
-        "responseExample": [
+        "responseExample":[
             {
                 "id": 1,
                 "title": " Z Book",
+                "video": true,
+                "link": "http://"
+            },
+            {
+                "id": 2,
+                "title": " Z Book 1",
+                "video": true,
                 "link": "http://"
             }
         ],
         "responseDescription": "Receives a list of materials for the specified track, including material name and type"
     },
     {
-        "endpoint": "/admin-lectures/add_new_lecture",
+        "endpoint": "/admin-lectures/new_lecture",
         "section": "admin-lectures",
         "method": "POST",
         "description": "Create a new lecture",
@@ -157,26 +166,56 @@
                 "paramDescription": "The ID of the track"
             },
             {
-                "paramName": "LectureTitle",
+                "paramName": "lectureTitle",
                 "paramType": "string",
-                "paramDescription": "The title of the lecture"
+                "paramDescription": "(optional) The title of the lecture, the Default is 'المحاضرة' and the Number of it"
             },
             {
-                "paramName": "LectureDate",
+                "paramName": "lectureDate",
                 "paramType": "string",
                 "paramDescription": "The date of the lecture"
             }
         ],
         "requestExample": {
             "trackID": 123,
-            "LectureTitle": "New Lecture",
-            "LectureDate": "2024-07-15"
+            "lectureTitle": "New Lecture",
+            "lectureDate": "2024-07-15"
         },
         "responseExample": "Done",
         "responseDescription": "Receives 'Done' if the lecture is successfully created, or one of the common errors"
     },
     {
-        "endpoint": "/admin-lectures/add_new_task",
+        "endpoint": "/admin-lectures/lecture_edit",
+        "section": "admin-lectures",
+        "method": "POST",
+        "description": "Edit a lecture Info",
+        "parameters": [
+            {
+                "paramName":"lectureID",
+                "paramType":"number",
+                "paramDescription":"The Lecture ID"
+            },
+            {
+                "paramName": "lectureTitle",
+                "paramType": "string",
+                "paramDescription": "(optional) The title of the lecture to be Edited"
+            },
+            {
+                "paramName": "lectureDate",
+                "paramType": "string",
+                "paramDescription": "(optional) The date of the lecture"
+            }
+            
+        ],
+        "requestExample": {
+            "lectureID": 123,
+            "lectureTitle": "New Lecture Name"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the lecture is successfully created, or one of the common errors"
+    },
+    {
+        "endpoint": "/admin-lectures/new_task",
         "section": "admin-lectures",
         "method": "POST",
         "description": "Create a new task entity for a lecture",
@@ -200,7 +239,7 @@
         "responseDescription": "Receives 'Done' if the task is successfully created, or one of the common errors"
     },
     {
-        "endpoint": "/admin-lectures/add_new_material",
+        "endpoint": "/admin-lectures/new_material",
         "section": "admin-lectures",
         "method": "POST",
         "description": "Create a new material entity for a lecture",
@@ -216,6 +255,11 @@
                 "paramDescription": "The title of the material"
             },
             {
+                "paramName":"materialVideo",
+                "paramType":"boolean",
+                "paramDescription":"Determine if the Material is a Video to Be Embedded or Just a Link"
+            },
+            {
                 "paramName": "materialType",
                 "paramType": "string",
                 "paramDescription": "The type of the material (video or document)"
@@ -224,9 +268,68 @@
         "requestExample": {
             "lectureID": 42,
             "materialTitle": "Lecture Slides",
+            "materialVideo":true,
             "materialType": "document"
         },
         "responseExample": "Done",
         "responseDescription": "Receives 'Done' if the material is successfully created, or one of the common errors"
+    },
+
+
+
+    {
+        "endpoint": "/admin-lectures/lecture",
+        "section": "admin-lectures",
+        "method": "Delete",
+        "description": "Archive a lecture, It can't be Deleted Totally as the Finance and Attendace can't be Deleted, but related tasks and Materials are Deleted",
+        "parameters": [
+            {
+                "paramName": "lectureID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the lecture the material is related to"
+            }
+        ],
+        "requestExample": {
+            "lectureID": 42
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the Lecture is successfully Archived, or one of the common errors"
+    },
+    {
+        "endpoint": "/admin-lectures/task",
+        "section": "admin-lectures",
+        "method": "Delete",
+        "description": "Delete the Task and All Student Assingment Related to it",
+        "parameters": [
+            {
+                "paramName": "taskID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the Task"
+            }
+        ],
+        "requestExample": {
+            "taskID": 42
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the Task is successfully Deleted, or one of the common errors"
+    },
+    {
+        "endpoint": "/admin-lectures/material",
+        "section": "admin-lectures",
+        "method": "Delete",
+        "description": "Delete the Material",
+        "parameters": [
+            {
+                "paramName": "materialID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the Material"
+            }
+        ],
+        "requestExample": {
+            "materialID": 42
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the Material is successfully Deleted, or one of the common errors"
     }
+    
 ]

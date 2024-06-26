@@ -72,6 +72,11 @@
                 "paramDescription":"The name of the material"
             },
             {
+                "paramName":"video",
+                "paramType":"boolean",
+                "paramDescription":"Determine if the Material is a Video to Be Embedded or Just a Link"
+            },
+            {
                 "paramName":"link",
                 "paramType":"string",
                 "paramDescription":"The Link of the material"
@@ -81,11 +86,13 @@
             {
                 "id": 1,
                 "title": " Z Book",
+                "video": true,
                 "link": "http://"
             },
             {
                 "id": 2,
                 "title": " Z Book 1",
+                "video": true,
                 "link": "http://"
             }
         ],
