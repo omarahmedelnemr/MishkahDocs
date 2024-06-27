@@ -8,57 +8,108 @@
         "requestExample": {},
         "responseParameters": [
             {
+                "paramName": "id",
+                "paramType": "number",
+                "paramDescription": "Admin ID"
+            },
+            {
                 "paramName": "name",
                 "paramType": "string",
                 "paramDescription": "Admin name"
             },
             {
-                "paramName": "username",
+                "paramName": "phone",
                 "paramType": "string",
-                "paramDescription": "Admin username"
+                "paramDescription": "Admin phone"
             },
+            {
+                "paramName": "sex",
+                "paramType": "string",
+                "paramDescription": "Admin's Gender"
+            },
+            
             {
                 "paramName": "permissions",
                 "paramType": "array",
-                "paramDescription": "List of admin permissions",
-                "paramItems": {
-                    "type": "string",
-                    "description": "Permission name"
-                }
+                "paramDescription": "List of admin permissions"
+                
+            },
+            {
+                "paramName": "tracks",
+                "paramType": "array",
+                "paramDescription": "List of admin Assinged Tracks"
+                
             }
         ],
         "responseExample": [
             {
-                "name": "Admin One",
-                "username": "admin1",
-                "permissions": ["permission1", "permission2"]
+                "id": 1,
+                "name": "Omar",
+                "phone": "012",
+                "sex": "male",
+                "role": "admin",
+                "permissions": [
+                    {
+                        "id": 2,
+                        "permission": "attendance"
+                    }
+                ],
+                "tracks": [
+                    {
+                        "id": 2,
+                        "description": "",
+                        "name": "Fiqh",
+                        "lecturesCount": 10,
+                        "attendingExpensis": 20,
+                        "openForEnrollment": null,
+                        "lectureDay": "Friday",
+                        "lectureTime": "2:00PM"
+                    }
+                ]
             },
             {
-                "name": "Admin Two",
-                "username": "admin2",
-                "permissions": ["permission1"]
+                "id": 2,
+                "name": "salma",
+                "phone": "012",
+                "sex": "female",
+                "role": "admin",
+                "permissions": [
+                    {
+                        "id": 2,
+                        "permission": "attendance"
+                    }
+                ],
+                "tracks": [
+                    {
+                        "id": 2,
+                        "description": "",
+                        "name": "Fiqh",
+                        "lecturesCount": 10,
+                        "attendingExpensis": 20,
+                        "openForEnrollment": null,
+                        "lectureDay": "Friday",
+                        "lectureTime": "2:00PM"
+                    }
+                ]
             }
         ],
         "responseDescription": "Receives the list of all admins including their names, usernames, and permissions"
     },
     {
-        "endpoint": "/super-admin/add_new_admin",
+        "endpoint": "/super-admin/admins_link",
         "section": "super-admin",
-        "method": "POST",
-        "description": "Create a link for new admin",
+        "method": "GET",
+        "description": "Return a JWT to Add New Admin",
         "parameters": [
             {
-                "paramName": "permissions",
-                "paramType": "array",
-                "paramDescription": "List of permissions for the new admin",
-                "paramItems": {
-                    "type": "string",
-                    "description": "Permission name"
-                }
+                "paramName": "daysLimit",
+                "paramType": "number",
+                "paramDescription": "The Number of Days Until the Link Expire, like 30 For a Month"
+                
             }
         ],
         "requestExample": {
-            "permissions": ["permission1", "permission2"]
+            "daysLimit": 30
         },
         "responseParameters": [
             {
@@ -68,12 +119,12 @@
             }
         ],
         "responseExample": {
-            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoib21hciBlbG5lbXIiLCJ1c2VySUQiOjF9.6RoM6tyuCMDa0JcCzMHTIRzYZRpBKLv_vTTvyz5ICHE"
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0YXJnZXQiOiJhZG1pbiIsImlhdCI6MTcxOTQ5NTI3NSwiZXhwIjoxNzIwNTMyMDc1fQ.7b3Wqm-cEti-OMqF2RZ-YOsDb36c0JzvZhKzr4mcDgk"
         },
         "responseDescription": "Receives a token to send to the new admin for starting the sign-in process"
     },
     {
-        "endpoint": "/super-admin/change_permission",
+        "endpoint": "/super-admin/change_permissions",
         "section": "super-admin",
         "method": "POST",
         "description": "Edit permissions for an admin",
@@ -86,7 +137,7 @@
             {
                 "paramName": "permissions",
                 "paramType": "array",
-                "paramDescription": "List of new permissions",
+                "paramDescription": "List of new permissions ID's",
                 "paramItems": {
                     "type": "string",
                     "description": "Permission name"
@@ -95,7 +146,7 @@
         ],
         "requestExample": {
             "adminID": 123,
-            "permissions": ["permission1", "permission3"]
+            "permissions": [2, 4]
         },
         "responseExample": "Done",
         "responseDescription": "Receives 'Done' if the permissions are successfully changed, or one of the common errors"
@@ -110,60 +161,175 @@
                 "paramName": "adminID",
                 "paramType": "integer",
                 "paramDescription": "The ID of the admin"
-            },
-            {
-                "paramName": "superAdminPasscode",
-                "paramType": "string",
-                "paramDescription": "Super admin passcode for authentication"
             }
         ],
         "requestExample": {
-            "adminID": 123,
-            "superAdminPasscode": "superpasscode123"
+            "adminID": 123
         },
         "responseExample": "Done",
         "responseDescription": "Receives 'Done' if the admin is successfully deleted, or one of the common errors"
     },
     {
-        "endpoint": "/super-admin/add_new_track",
+        "endpoint": "/super-admin/new_track",
         "section": "super-admin",
         "method": "POST",
         "description": "Create a new track",
         "parameters": [
             {
-                "paramName": "trackName",
+                "paramName": "name",
                 "paramType": "string",
                 "paramDescription": "The name of the track"
             },
             {
-                "paramName": "trackLecturesNumber",
+                "paramName": "lecturesCount",
                 "paramType": "integer",
                 "paramDescription": "The number of lectures in the track"
             },
             {
-                "paramName": "attendingPrice",
+                "paramName": "attendingExpensis",
                 "paramType": "number",
                 "paramDescription": "The price for attending the track for Each Lecture"
             },
             {
-                "paramName": "weeklyDate",
+                "paramName": "lectureDay",
                 "paramType": "string",
-                "paramDescription": "The weekly date for the track meetings"
+                "paramDescription": "The Expected weekly date for the track meetings"
             },
             {
-                "paramName": "expectedStartDate",
-                "paramType": "string",
-                "paramDescription": "The expected start date of the track"
+                "paramName": "openForEnrollment",
+                "paramType": "Date",
+                "paramDescription": "The Date when the Enrollment Close (Deadline for Enrollment)"
             }
         ],
         "requestExample": {
-            "trackName": "New Track",
-            "trackLecturesNumber": 10,
-            "attendingPrice": 100.00,
-            "weeklyDate": "Monday",
-            "expectedStartDate": "2024-07-01"
+            "name": "New Track",
+            "lecturesCount": 10,
+            "attendingExpensis": 100.00,
+            "lectureDay": "Monday",
+            "openForEnrollment": "2024-07-01"
         },
         "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the track is successfully created, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/assign_track",
+        "section": "super-admin",
+        "method": "POST",
+        "description": "Assing a Track to an Admin",
+        "parameters": [
+            {
+                "paramName": "trackID",
+                "paramType": "number",
+                "paramDescription": "The ID of the track"
+            },
+            {
+                "paramName": "adminID",
+                "paramType": "number",
+                "paramDescription": "The ID of the admin"
+            }
+        ],
+        "requestExample": {
+            "trackID": 2,
+            "adminID": 1
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the track is successfully Assigned To The Admin, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/assign_track",
+        "section": "super-admin",
+        "method": "DELETE",
+        "description": "Remove The Track from Admin Assingment List",
+        "parameters": [
+            {
+                "paramName": "trackID",
+                "paramType": "number",
+                "paramDescription": "The ID of the track"
+            },
+            {
+                "paramName": "adminID",
+                "paramType": "number",
+                "paramDescription": "The ID of the admin"
+            }
+        ],
+        "requestExample": {
+            "trackID": 2,
+            "adminID": 1
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the track is successfully unAssigned To The Admin, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/extend_enrollment",
+        "section": "super-admin",
+        "method": "POST",
+        "description": "Extend Dealine for Enrollment to a Given Date",
+        "parameters": [
+            {
+                "paramName": "trackID",
+                "paramType": "number",
+                "paramDescription": "The ID of the track"
+            },
+            {
+                "paramName": "DateToClose",
+                "paramType": "Date",
+                "paramDescription": "The Date when the Enrollment Close (Deadline for Enrollment)"
+            }
+        ],
+        "requestExample": {
+            "trackID": 2,
+            "DateToClose": "2024-07-01"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the track is successfully Modified, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/close_enrollment",
+        "section": "super-admin",
+        "method": "POST",
+        "description": "Close The Deadline of the Enrollment",
+        "parameters": [
+            {
+                "paramName": "trackID",
+                "paramType": "number",
+                "paramDescription": "The ID of the track"
+            },
+            {
+                "paramName": "currentDate",
+                "paramType": "Date",
+                "paramDescription": "The Date Of Current Moment From the Front End (Sometimes the Back-end is Hosted in a Diffrant Time-zone Than The User, So The Time Need To Be From User's Timezone)"
+            }
+        ],
+        "requestExample": {
+            "trackID": 10,
+            "currentDate": "2024-07-01"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the track is successfully created, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/registration_link",
+        "section": "super-admin",
+        "method": "POST",
+        "description": "Create Link For Student to Register in a track",
+        "parameters": [
+            {
+                "paramName": "trackID",
+                "paramType": "number",
+                "paramDescription": "The ID of the admin"
+            },
+            {
+                "paramName": "daysLimit",
+                "paramType": "number",
+                "paramDescription": "The Number of Days Until the Link Expire, like 30 For a Month"
+            }
+
+        ],
+        "requestExample": {
+            "trackID": 10,
+            "daysLimit": 40
+        },
+        "responseExample": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFjayI6IjEiLCJ0YXJnZXQiOiJzdHVkZW50cyIsImlhdCI6MTcxOTQ5NTk1OCwiZXhwIjoxNzIwNTMyNzU4fQ.nFb_IzEnFSfH7QhE_4rTf0joYC5mrLJSyuQXs6rOAeQ",
         "responseDescription": "Receives 'Done' if the track is successfully created, or one of the common errors"
     }
 ]
