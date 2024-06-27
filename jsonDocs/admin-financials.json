@@ -1,76 +1,89 @@
 [
     {
-        "endpoint": "/admin-financials/financial_record",
+        "endpoint": "/admin-financials/financial_sheet",
         "section": "admin-financials",
         "method": "GET",
-        "description": "Get the financial records of users",
+        "description": "Get the financial Sheet of users",
         "parameters": [
             {
                 "paramName": "lectureID",
                 "paramType": "integer",
                 "paramDescription": "The ID of the lecture"
+            },
+            {
+                "paramName": "trackID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the Track"
             }
+             
         ],
         "requestExample": {
-            "lectureID": 43
+            "lectureID": 43,
+            "trackID":12
         },
         "responseParameters": [
             {
+                "paramName": "studentID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the Student"
+            },
+            {
+                "paramName": "studentName",
+                "paramType": "String",
+                "paramDescription": "The Name of the Student"
+            },
+            {
+                "paramName": "studentSex",
+                "paramType": "String",
+                "paramDescription": "Wheather male of female"
+            },
+            {
                 "paramName": "paid",
-                "paramType": "integer",
-                "paramDescription": "The number of people who paid"
-            },
-            {
-                "paramName": "wallet",
-                "paramType": "integer",
-                "paramDescription": "The number of people who added money to their wallet"
-            },
-            {
-                "paramName": "notPaid",
-                "paramType": "integer",
-                "paramDescription": "The number of people who did not pay"
-            },
-            {
-                "paramName": "people",
-                "paramType": "array",
-                "paramDescription": "The list of people and their financial status",
-                "paramItems": {
-                    "type": "object",
-                    "properties": {
-                        "userID": {
-                            "type": "integer",
-                            "description": "The ID of the user"
-                        },
-                        "username": {
-                            "type": "string",
-                            "description": "The username of the user"
-                        },
-                        "status": {
-                            "type": "string",
-                            "description": "The financial status (if it was recorded, otherwise it is Null)"
-                        }
-                    }
-                }
+                "paramType": "Boolean",
+                "paramDescription": "Determine Wheather the Student Pay or Not"
+                
             }
         ],
-        "responseExample": {
-            "paid": 15,
-            "wallet": 5,
-            "notPaid": 3,
-            "people": [
-                {
-                    "userID": 41,
-                    "username": "johndoe",
-                    "status": "paid"
-                },
-                {
-                    "userID": 64,
-                    "username": "janedoe",
-                    "status": "wallet"
-                }
-            ]
-        },
+        "responseExample": [
+            {
+                "studentID": 1,
+                "studentName": "omar ahmed ",
+                "studentSex": "male",
+                "paid": false
+            },
+            {
+                "studentID": 2,
+                "studentName": "omar ahmed ",
+                "studentSex": "male",
+                "paid": false
+            }
+        ],
         "responseDescription": "Receives the financial records of the specified lecture, including payment counts and the list of people with their statuses"
+    },
+    {
+        "endpoint": "/admin-financials/expenses_edit",
+        "section": "admin-financials",
+        "method": "POST",
+        "description": "Edit the Weekly Lecture Price",
+        "parameters": [
+            {
+                "paramName": "trackID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the Track"
+            },
+            {
+                "paramName": "newPrice",
+                "paramType": "Float",
+                "paramDescription": "The New Price of the Lecture"
+            }
+        ],
+        "requestExample": {
+            "trackID":1,
+            "newPrice":14
+
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the financial record is successfully submitted, or one of the common errors"
     },
     {
         "endpoint": "/admin-financials/submit_financial_record",
@@ -84,36 +97,38 @@
                 "paramDescription": "The ID of the lecture"
             },
             {
+                "paramName": "trackID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the Track"
+            },
+            {
                 "paramName": "people",
-                "paramType": "array",
-                "paramDescription": "The list of people and their financial statuses",
-                "paramItems": {
-                    "type": "object",
-                    "properties": {
-                        "userID": {
-                            "type": "integer",
-                            "description": "The ID of the user"
-                        },
-                        "status": {
-                            "type": "integer",
-                            "description": "The financial status (if it was recorded, otherwise it is Null)"
-                        }
-                    }
-                }
+                "paramType": "Object",
+                "paramDescription": "The List of All Students and Thier Status, SHould Have Two Parameters: studentID, paid"
             }
         ],
         "requestExample": {
-            "lectureID": 532,
-            "people": [
+            "lectureID":1,
+            "trackID":1,
+            "people":[
                 {
-                    "userID": 22,
-                    "status": "paid"
+                    "studentID":1,
+                    "paid":0
                 },
                 {
-                    "userID": 52,
-                    "status": "wallet"
+                    "studentID":2,
+                    "paid":1
+                },
+                {
+                    "studentID":3,
+                    "paid":1
+                },
+                {
+                    "studentID":4,
+                    "paid":1
                 }
             ]
+
         },
         "responseExample": "Done",
         "responseDescription": "Receives 'Done' if the financial record is successfully submitted, or one of the common errors"
