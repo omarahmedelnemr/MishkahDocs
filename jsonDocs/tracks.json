@@ -172,10 +172,16 @@
                 "paramName":"trackID",
                 "paramType":"integer",
                 "paramDescription":"The ID of the Track"
+            },
+            {
+                "paramName":"token",
+                "paramType":"String",
+                "paramDescription":"a Token The User Recieved From Server-side at any Operation (any JWT from Server-Side)"
             }
         ],
         "requestExample":{
-            "trackID":123
+            "trackID":123,
+            "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0YXJnZXQiOiJ1c2VycyJ9._fmQNwTTyEPZNTTMmj7ytQmChw5OykjpvREKRs-veTI"
         },
         "responseParameters":[
             {
