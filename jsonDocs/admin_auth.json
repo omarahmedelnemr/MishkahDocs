@@ -8,7 +8,7 @@
             {
                 "paramName": "token",
                 "paramType": "string",
-                "paramDescription": "The token received from the super Admin"
+                "paramDescription": "The token received from the super Admin, Should Contians Persmissions Array and Tracks Array"
             },
             {
                 "paramName": "username",
@@ -19,12 +19,36 @@
                 "paramName": "password",
                 "paramType": "string",
                 "paramDescription": "The password for the new admin"
+            },
+            {
+                "paramName": "email",
+                "paramType": "string",
+                "paramDescription": "The admin Email Used to Recover the Accound When Needed"
+            },
+            {
+                "paramName": "name",
+                "paramType": "string",
+                "paramDescription": "The Name of The Admin (Recommended to be in Arabic )"
+            },
+            {
+                "paramName": "phone",
+                "paramType": "string",
+                "paramDescription": "The Phone Number of The Admin"
+            },
+            {
+                "paramName": "sex",
+                "paramType": "Boolean",
+                "paramDescription": "The Gender of the new admin, 0 for Male, 1 For Woman"
             }
         ],
         "requestExample": {
             "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoib21hciBlbG5lbXIiLCJ1c2VySUQiOjF9.6RoM6tyuCMDa0JcCzMHTIRzYZRpBKLv_vTTvyz5ICHE",
             "username": "newAdmin",
-            "password": "adminPass123"
+            "password": "adminPass123",
+            "email":"omarahmed@gmail.com",
+            "name":"عمر احمد النمر",
+            "phone":"01154",
+            "sex":0
         },
         "responseExample": "Done",
         "responseDescription": "Receives 'Done' if the signup is successful, or one of the common errors"
