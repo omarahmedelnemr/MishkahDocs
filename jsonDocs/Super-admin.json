@@ -61,7 +61,7 @@
                         "name": "Fiqh",
                         "lecturesCount": 10,
                         "attendingExpensis": 20,
-                        "openForEnrollment": null,
+                        "EnrollmentDeadline": null,
                         "lectureDay": "Friday",
                         "lectureTime": "2:00PM"
                     }
@@ -86,7 +86,7 @@
                         "name": "Fiqh",
                         "lecturesCount": 10,
                         "attendingExpensis": 20,
-                        "openForEnrollment": null,
+                        "EnrollmentDeadline": null,
                         "lectureDay": "Friday",
                         "lectureTime": "2:00PM"
                     }
@@ -196,7 +196,7 @@
                 "paramDescription": "The Expected weekly date for the track meetings"
             },
             {
-                "paramName": "openForEnrollment",
+                "paramName": "EnrollmentDeadline",
                 "paramType": "Date",
                 "paramDescription": "The Date when the Enrollment Close (Deadline for Enrollment)"
             }
@@ -206,7 +206,7 @@
             "lecturesCount": 10,
             "attendingExpensis": 100.00,
             "lectureDay": "Monday",
-            "openForEnrollment": "2024-07-01"
+            "EnrollmentDeadline": "2024-07-01"
         },
         "responseExample": "Done",
         "responseDescription": "Receives 'Done' if the track is successfully created, or one of the common errors"
