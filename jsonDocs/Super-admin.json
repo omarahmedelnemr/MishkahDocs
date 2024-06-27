@@ -98,7 +98,7 @@
     {
         "endpoint": "/super-admin/admins_link",
         "section": "super-admin",
-        "method": "GET",
+        "method": "POST",
         "description": "Return a JWT to Add New Admin",
         "parameters": [
             {
@@ -106,10 +106,24 @@
                 "paramType": "number",
                 "paramDescription": "The Number of Days Until the Link Expire, like 30 For a Month"
                 
+            },
+            {
+                "paramName": "permissions",
+                "paramType": "Array",
+                "paramDescription": "The Array of Permission ID's That The Admin Will Have"
+                
+            },
+            {
+                "paramName": "tracks",
+                "paramType": "Array",
+                "paramDescription": "The Array of Tracks ID's That The Admin Will Be Assinged To"
+                
             }
         ],
         "requestExample": {
-            "daysLimit": 30
+            "daysLimit": 30,
+            "permissions":[1,3],
+            "tracks":[10]
         },
         "responseParameters": [
             {
@@ -119,7 +133,7 @@
             }
         ],
         "responseExample": {
-            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0YXJnZXQiOiJhZG1pbiIsImlhdCI6MTcxOTQ5NTI3NSwiZXhwIjoxNzIwNTMyMDc1fQ.7b3Wqm-cEti-OMqF2RZ-YOsDb36c0JzvZhKzr4mcDgk"
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0YXJnZXQiOiJhZG1pbiIsInBlcm1pc3Npb25zIjpbMSwyXSwidHJhY2tzIjpbMSwyXSwiaWF0IjoxNzE5NTAzOTc4LCJleHAiOjE3MTk2NzY3Nzh9.x7xLN2l-B4-6prU78cebHqU8l9pdEcvwfbLNoffhVyU"
         },
         "responseDescription": "Receives a token to send to the new admin for starting the sign-in process"
     },
@@ -310,7 +324,7 @@
     {
         "endpoint": "/super-admin/registration_link",
         "section": "super-admin",
-        "method": "POST",
+        "method": "GET",
         "description": "Create Link For Student to Register in a track",
         "parameters": [
             {
@@ -319,17 +333,17 @@
                 "paramDescription": "The ID of the admin"
             },
             {
-                "paramName": "daysLimit",
-                "paramType": "number",
-                "paramDescription": "The Number of Days Until the Link Expire, like 30 For a Month"
+                "paramName": "currentDate",
+                "paramType": "Date",
+                "paramDescription": "The Date Of Current Moment From the Front End (Sometimes the Back-end is Hosted in a Diffrant Time-zone Than The User, So The Time Need To Be From User's Timezone)"
             }
 
         ],
         "requestExample": {
             "trackID": 10,
-            "daysLimit": 40
+            "currentDate": "2024-07-01"
         },
-        "responseExample": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFjayI6IjEiLCJ0YXJnZXQiOiJzdHVkZW50cyIsImlhdCI6MTcxOTQ5NTk1OCwiZXhwIjoxNzIwNTMyNzU4fQ.nFb_IzEnFSfH7QhE_4rTf0joYC5mrLJSyuQXs6rOAeQ",
+        "responseExample": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFjayI6IjEiLCJ0YXJnZXQiOiJzdHVkZW50cyIsImlhdCI6MTcxOTUwNTc0MywiZXhwIjoxNzIwMDI0MTQzfQ.TK3h__qrQM6GqmScv_WtPuwhSxieoHYxA8bgQRu-w88",
         "responseDescription": "Receives 'Done' if the track is successfully created, or one of the common errors"
     }
 ]
