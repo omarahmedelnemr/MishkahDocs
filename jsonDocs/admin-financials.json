@@ -34,8 +34,8 @@
             },
             {
                 "paramName": "studentSex",
-                "paramType": "String",
-                "paramDescription": "Wheather male of female"
+                "paramType": "Boolean",
+                "paramDescription": "The Gender of the Student, 0 for Male, 1 For Woman"
             },
             {
                 "paramName": "paid",
@@ -48,13 +48,13 @@
             {
                 "studentID": 1,
                 "studentName": "omar ahmed ",
-                "studentSex": "male",
+                "studentSex": 0,
                 "paid": false
             },
             {
                 "studentID": 2,
                 "studentName": "omar ahmed ",
-                "studentSex": "male",
+                "studentSex": 0,
                 "paid": false
             }
         ],

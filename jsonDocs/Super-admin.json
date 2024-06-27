@@ -24,8 +24,8 @@
             },
             {
                 "paramName": "sex",
-                "paramType": "string",
-                "paramDescription": "Admin's Gender"
+                "paramType": "Boolean",
+                "paramDescription": "The Gender of the admin, 0 for Male, 1 For Woman"
             },
             
             {
@@ -46,7 +46,7 @@
                 "id": 1,
                 "name": "Omar",
                 "phone": "012",
-                "sex": "male",
+                "sex": 0,
                 "role": "admin",
                 "permissions": [
                     {
@@ -71,7 +71,7 @@
                 "id": 2,
                 "name": "salma",
                 "phone": "012",
-                "sex": "female",
+                "sex": 1,
                 "role": "admin",
                 "permissions": [
                     {
