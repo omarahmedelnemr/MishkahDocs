@@ -1,6 +1,6 @@
 [
     {
-        "endpoint": "/admin-attendance/attendance_record",
+        "endpoint": "/admin-attendance/attendance_sheet",
         "section": "admin-attendance",
         "method": "GET",
         "description": "Get the attendance records of a lecture",
@@ -16,70 +16,52 @@
         },
         "responseParameters": [
             {
-                "paramName": "attended",
+                "paramName": "studentID",
                 "paramType": "integer",
-                "paramDescription": "The number of people who attended"
+                "paramDescription": "The ID of The Student"
             },
             {
-                "paramName": "late",
-                "paramType": "integer",
-                "paramDescription": "The number of people who were late"
+                "paramName": "studentName",
+                "paramType": "String",
+                "paramDescription": "The Name of the Student"
             },
             {
-                "paramName": "absent",
-                "paramType": "integer",
-                "paramDescription": "The number of people who were absent"
+                "paramName": "lectureTitle",
+                "paramType": "String",
+                "paramDescription": "The Title of the Lecture"
             },
             {
-                "paramName": "excuse",
-                "paramType": "integer",
-                "paramDescription": "The number of people who had an excuse"
+                "paramName": "lectureDate",
+                "paramType": "String",
+                "paramDescription": "The Date of the Lecture"
             },
             {
-                "paramName": "people",
-                "paramType": "array",
-                "paramDescription": "The list of people and their attendance status",
-                "paramItems": {
-                    "type": "object",
-                    "properties": {
-                        "userID": {
-                            "type": "integer",
-                            "description": "The ID of the user"
-                        },
-                        "username": {
-                            "type": "string",
-                            "description": "The username of the user"
-                        },
-                        "status": {
-                            "type": "string",
-                            "description": "The attendance status (if it was recorded, otherwise it is Null)"
-                        }
-                    }
-                }
+                "paramName": "status",
+                "paramType": "Number",
+                "paramDescription": "Wheather the Student Attended or Not, 0 for Not, 1 for Attended, 2 for attended Late"
             }
         ],
-        "responseExample": {
-            "attended": 10,
-            "late": 2,
-            "absent": 3,
-            "excuse": 1,
-            "people": [
-                {
-                    "userID": 31,
-                    "username": "johndoe",
-                    "status": "attended"
-                },
-                {
-                    "userID": 15,
-                    "username": "janedoe",
-                    "status": "late"
-                }
-            ]
-        },
+        "responseExample": [
+            {
+                "studentID": 1,
+                "studentName": "omar ahmed ",
+                "lectureTitle": "lec 1",
+                "lectureDate": "2024-06-19T14:53:37.000Z",
+                "status": 1
+            },
+            {
+                "studentID": 2,
+                "studentName": "ahmed_mohamed",
+                "date": "2024-06-19T14:53:37.000Z",
+                "lectureTitle": "lec 1",
+                "lectureDate": "2024-06-19T14:53:37.000Z",
+                "status": 1
+            }
+        ],
         "responseDescription": "Receives the attendance records of the specified lecture, including attendance counts and the list of people with their statuses"
     },
     {
-        "endpoint": "/admin-attendance/submit_attendance_record",
+        "endpoint": "/admin-attendance/attendance_sheet",
         "section": "admin-attendance",
         "method": "POST",
         "description": "Submit an attendance record",
@@ -96,7 +78,7 @@
                 "paramItems": {
                     "type": "object",
                     "properties": {
-                        "userID": {
+                        "studentID": {
                             "type": "integer",
                             "description": "The ID of the user"
                         },
@@ -112,11 +94,11 @@
             "lectureID": 41,
             "people": [
                 {
-                    "userID": 23,
+                    "studentID": 23,
                     "status": "attended"
                 },
                 {
-                    "userID": 45,
+                    "studentID": 45,
                     "status": "late"
                 }
             ]
