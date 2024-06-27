@@ -161,4 +161,98 @@
         ],
         "responseDescription":"Receives a list of tracks the user can enroll in, including the track name, description, number of lectures, and the date of the first lecture"
     }
+    ,
+    {
+        "endpoint":"/tracks/track_info",
+        "section":"tracks",
+        "method":"GET",
+        "description":"Get The Information about Specific Track",
+        "parameters":[
+            {
+                "paramName":"trackID",
+                "paramType":"integer",
+                "paramDescription":"The ID of the Track"
+            }
+        ],
+        "requestExample":{
+            "trackID":123
+        },
+        "responseParameters":[
+            {
+                "paramName":"id",
+                "paramType":"number",
+                "paramDescription":"the ID of the Track"
+            },
+            {
+                "paramName":"name",
+                "paramType":"string",
+                "paramDescription":"The name of the track"
+            },
+            {
+                "paramName":"description",
+                "paramType":"string",
+                "paramDescription":"The description of the track"
+            },
+            {
+                "paramName":"lecturesCount",
+                "paramType":"integer",
+                "paramDescription":"The number of lectures in the track"
+            },
+            {
+                "paramName":"attendingExpensis",
+                "paramType":"float",
+                "paramDescription":"the approxemet Value of Lecture Attending Price"
+            },
+            {
+                "paramName":"openForEnrollment",
+                "paramType":"boolean",
+                "paramDescription":"Wheather the Track is Open For Enrollment or not"
+            },
+            {
+                "paramName":"lectureDay",
+                "paramType":"string",
+                "paramDescription":"The Day date of the lecture in the track"
+            },
+            {
+                "paramName":"lectureTime",
+                "paramType":"string",
+                "paramDescription":"The Time date of the lecture in the track"
+            }
+        ],
+        "responseExample":{
+            "id": 1,
+            "description": "",
+            "name": "Taqween",
+            "lecturesCount": 12,
+            "attendingExpensis": 15,
+            "openForEnrollment": true,
+            "lectureDay": "Sunday",
+            "lectureTime": "40PM"
+        },
+        "responseDescription":"Receives Track Info, including the track name, description, number of lectures, and the date of the first lecture"
+    },
+    {
+        "endpoint":"/tracks/track_register",
+        "section":"tracks",
+        "method":"POST",
+        "description":"Register a Student into a Track",
+        "parameters":[
+            {
+                "paramName":"studentID",
+                "paramType":"integer",
+                "paramDescription":"The student ID"
+            },
+            {
+                "paramName":"trackID",
+                "paramType":"integer",
+                "paramDescription":"The Track ID"
+            }
+        ],
+        "requestExample":{
+            "studentID":123,
+            "trackID":123
+        },
+        "responseExample":"done",
+        "responseDescription":"Receives 'Done' if the task is successfully marked as not done or one of the common errors"
+    }
 ]
