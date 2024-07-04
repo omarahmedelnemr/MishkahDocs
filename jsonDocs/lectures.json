@@ -6,12 +6,18 @@
         "description":"Get the list of lectures by track",
         "parameters":[
             {
+                "paramName":"userID",
+                "paramType":"string",
+                "paramDescription":"The user ID to determine whether the user has completed the tasks"
+            },
+            {
                 "paramName":"trackID",
                 "paramType":"string",
                 "paramDescription":"The track ID"
             }
         ],
         "requestExample":{
+            "userID":2,
             "trackID":"12345"
         },
         "responseParameters":[
@@ -29,18 +35,129 @@
                 "paramName":"date",
                 "paramType":"string",
                 "paramDescription":"The date of the lecture"
+            },
+            {
+                "paramName":"materials",
+                "paramType":"Array",
+                "paramDescription":"The Array of Lecture Materials"
+            },
+            {
+                "paramName":"tasks",
+                "paramType":"Array",
+                "paramDescription":"The Array of Lecture Tasks"
             }
         ],
         "responseExample":[
             {
                 "id": 1,
                 "title": "lec 1",
-                "date": "2024-06-19T14:53:37.000Z"
+                "date": "2024-06-19T14:53:37.000Z",
+                "archived": false,
+                "materials": [
+                    {
+                        "id": 2,
+                        "title": "قراءه 10 صفحات من الاربيعن النوويه",
+                        "video": true,
+                        "link": "http[s"
+                    },
+                    {
+                        "id": 3,
+                        "title": "قراءه 11 صفحات من الاربيعن النوويه",
+                        "video": false,
+                        "link": "http[s"
+                    }
+                ],
+                "tasks": []
             },
             {
                 "id": 2,
                 "title": "lec 2",
-                "date": "2024-06-19T14:53:38.000Z"
+                "date": "2024-06-19T14:53:38.000Z",
+                "archived": false,
+                "materials": [
+                    {
+                        "id": 4,
+                        "title": "قراءه 12 صفحات من الاربيعن النوويه",
+                        "video": true,
+                        "link": "http[s"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "id": 8,
+                        "title": "do Last 16",
+                        "done": true
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "title": "المحاضرة 3",
+                "date": "2024-06-23T20:45:34.000Z",
+                "archived": false,
+                "materials": [
+                    {
+                        "id": 5,
+                        "title": "قراءه 13 صفحات من الاربيعن النوويه",
+                        "video": true,
+                        "link": "http[s"
+                    }
+                ],
+                "tasks": []
+            },
+            {
+                "id": 4,
+                "title": "المحاضرة 4",
+                "date": "2024-06-23T20:45:34.000Z",
+                "archived": false,
+                "materials": [
+                    {
+                        "id": 6,
+                        "title": "قراءه 14 صفحات من الاربيعن النوويه",
+                        "video": true,
+                        "link": "http[s"
+                    }
+                ],
+                "tasks": []
+            },
+            {
+                "id": 5,
+                "title": "المحاضرة 5",
+                "date": "2024-06-23T20:45:34.000Z",
+                "archived": false,
+                "materials": [
+                    {
+                        "id": 7,
+                        "title": "قراءه 15 صفحات من الاربيعن النوويه",
+                        "video": true,
+                        "link": "http[s"
+                    }
+                ],
+                "tasks": []
+            },
+            {
+                "id": 6,
+                "title": "المحاضرة 6",
+                "date": "2024-06-23T20:45:34.000Z",
+                "archived": false,
+                "materials": [],
+                "tasks": []
+            },
+            {
+                "id": 7,
+                "title": "المحاضرة NaN",
+                "date": "2024-06-23T20:45:34.000Z",
+                "archived": false,
+                "materials": [],
+                "tasks": []
+            },
+            {
+                "id": 8,
+                "title": "تزكية القلب",
+                "date": "2024-06-23T20:45:34.000Z",
+                "archived": false,
+                "materials": [],
+                "tasks": []
             }
         ],
         "responseDescription":"Receives a list of lectures for the specified track, including lecture ID, name, and date"
