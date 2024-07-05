@@ -9,10 +9,16 @@
                 "paramName":"userID",
                 "paramType":"integer",
                 "paramDescription":"The user ID"
+            },
+            {
+                "paramName":"trackID",
+                "paramType":"integer",
+                "paramDescription":"The Track ID"
             }
         ],
         "requestExample":{
-            "userID":213
+            "userID":213,
+            "trackID":12
         },
         "responseParameters":[
             {
