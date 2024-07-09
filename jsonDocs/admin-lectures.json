@@ -235,8 +235,10 @@
             "lectureID": 32,
             "taskText": "Complete the assignment"
         },
-        "responseExample": "Done",
-        "responseDescription": "Receives 'Done' if the task is successfully created, or one of the common errors"
+        "responseExample": {
+            "taskID":1
+        },
+        "responseDescription": "Receives the ID of added Task if the material is successfully created, or one of the common errors"
     },
     {
         "endpoint": "/admin-lectures/new_material",
@@ -260,19 +262,21 @@
                 "paramDescription":"Determine if the Material is a Video to Be Embedded or Just a Link"
             },
             {
-                "paramName": "materialType",
+                "paramName": "materialLink",
                 "paramType": "string",
-                "paramDescription": "The type of the material (video or document)"
+                "paramDescription": "The Link of the material (video or document)"
             }
         ],
         "requestExample": {
             "lectureID": 42,
             "materialTitle": "Lecture Slides",
             "materialVideo":true,
-            "materialType": "document"
+            "materialLink": "http"
         },
-        "responseExample": "Done",
-        "responseDescription": "Receives 'Done' if the material is successfully created, or one of the common errors"
+        "responseExample": {
+            "materialID":1
+        },
+        "responseDescription": "Receives the ID of added Material if the material is successfully created, or one of the common errors"
     },
 
 

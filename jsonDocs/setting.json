@@ -1,9 +1,9 @@
 [
     {
-        "endpoint": "/settings/change_username",
+        "endpoint": "/settings/change_email",
         "section": "settings",
         "method": "POST",
-        "description": "Change the user's username used in the login process",
+        "description": "Change the user's Email used in the login process",
         "parameters": [
             {
                 "paramName": "userID",
@@ -16,18 +16,18 @@
                 "paramDescription": "The user's password for authentication"
             },
             {
-                "paramName": "newUsername",
+                "paramName": "newEmail",
                 "paramType": "string",
-                "paramDescription": "The new username to be set"
+                "paramDescription": "The new Email to be set"
             }
         ],
         "requestExample": {
             "userID": 12,
             "password": "password123",
-            "newUsername": "newUser456"
+            "newEmail": "mohamed@mhamed.com"
         },
         "responseExample": "Done",
-        "responseDescription": "Receives 'Done' if the username is successfully changed, or one of the common errors"
+        "responseDescription": "Receives 'Done' if the Email is successfully changed, or one of the common errors"
     },
     {
         "endpoint": "/settings/change_password",

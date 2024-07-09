@@ -34,7 +34,7 @@
             {
                 "paramName":"attended",
                 "paramType":"boolean",
-                "paramDescription":"The attendance status of the user for the lecture (Attended, Late, Absent, Excused)"
+                "paramDescription":"The attendance status of the user for the lecture (Attended, Late, Absent, Excused), 0 for Absent, 1 for Attended, 2 for attended Late, 3 for Excuse"
             }
         ],
         "responseExample":[

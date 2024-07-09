@@ -86,7 +86,7 @@
         "responseDescription": "Receives 'Done' if the financial record is successfully submitted, or one of the common errors"
     },
     {
-        "endpoint": "/admin-financials/submit_financial_record",
+        "endpoint": "/admin-financials/financial_sheet",
         "section": "admin-financials",
         "method": "POST",
         "description": "Submit a financial record",

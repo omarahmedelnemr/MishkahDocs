@@ -6,12 +6,18 @@
         "description": "Get the attendance records of a lecture",
         "parameters": [
             {
+                "paramName": "trackID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the track"
+            },
+            {
                 "paramName": "lectureID",
                 "paramType": "integer",
                 "paramDescription": "The ID of the lecture"
             }
         ],
         "requestExample": {
+            "trackID":1,
             "lectureID": 21
         },
         "responseParameters": [

@@ -29,12 +29,6 @@
             },
             
             {
-                "paramName": "permissions",
-                "paramType": "array",
-                "paramDescription": "List of admin permissions"
-                
-            },
-            {
                 "paramName": "tracks",
                 "paramType": "array",
                 "paramDescription": "List of admin Assinged Tracks"
@@ -48,12 +42,6 @@
                 "phone": "012",
                 "sex": 0,
                 "role": "admin",
-                "permissions": [
-                    {
-                        "id": 2,
-                        "permission": "attendance"
-                    }
-                ],
                 "tracks": [
                     {
                         "id": 2,
@@ -73,12 +61,6 @@
                 "phone": "012",
                 "sex": 1,
                 "role": "admin",
-                "permissions": [
-                    {
-                        "id": 2,
-                        "permission": "attendance"
-                    }
-                ],
                 "tracks": [
                     {
                         "id": 2,
@@ -93,7 +75,7 @@
                 ]
             }
         ],
-        "responseDescription": "Receives the list of all admins including their names, usernames, and permissions"
+        "responseDescription": "Receives the list of all admins including their names, usernames"
     },
     {
         "endpoint": "/super-admin/admins_link",
@@ -108,12 +90,6 @@
                 
             },
             {
-                "paramName": "permissions",
-                "paramType": "Array",
-                "paramDescription": "The Array of Permission ID's That The Admin Will Have"
-                
-            },
-            {
                 "paramName": "tracks",
                 "paramType": "Array",
                 "paramDescription": "The Array of Tracks ID's That The Admin Will Be Assinged To"
@@ -122,7 +98,6 @@
         ],
         "requestExample": {
             "daysLimit": 30,
-            "permissions":[1,3],
             "tracks":[10]
         },
         "responseParameters": [
@@ -166,7 +141,7 @@
         "responseDescription": "Receives 'Done' if the permissions are successfully changed, or one of the common errors"
     },
     {
-        "endpoint": "/super-admin/delete_admin",
+        "endpoint": "/super-admin/admin",
         "section": "super-admin",
         "method": "DELETE",
         "description": "Remove an admin with all their related info",
@@ -184,11 +159,146 @@
         "responseDescription": "Receives 'Done' if the admin is successfully deleted, or one of the common errors"
     },
     {
+        "endpoint": "/super-admin/tracks",
+        "section": "super-admin",
+        "method": "GET",
+        "description": "Get all Tracks list",
+        "parameters": [],
+        "requestExample": {},
+        "responseParameters": [
+            {
+                "paramName": "id",
+                "paramType": "number",
+                "paramDescription": "Track ID"
+            },
+            {
+                "paramName": "name",
+                "paramType": "string",
+                "paramDescription": "Track name"
+            },
+            {
+                "paramName": "description",
+                "paramType": "string",
+                "paramDescription": "The Description of the Track"
+            },
+            {
+                "paramName": "lecturesCount",
+                "paramType": "number",
+                "paramDescription": "The Number of Lectures during the Track"
+            },
+            
+            {
+                "paramName": "attendingExpensis",
+                "paramType": "number",
+                "paramDescription": "The Price of the Attending a Lecture (not used in the Current Version (1.0))"
+                
+            },
+            {
+                "paramName": "EnrollmentDeadline",
+                "paramType": "date",
+                "paramDescription": "The Last Date that Someone can Register on the Track"
+                
+            },
+            {
+                "paramName": "enrollmentToken",
+                "paramType": "string",
+                "paramDescription": "The Token Used to Generate a Registraion Link"
+                
+            },
+            {
+                "paramName": "imageLink",
+                "paramType": "string",
+                "paramDescription": "Track Cover Image"
+                
+            },
+            {
+                "paramName": "lectureDay",
+                "paramType": "string",
+                "paramDescription": "The Day of the Track During the Week like Tuesday"
+                
+            },
+            {
+                "paramName": "lectureTime",
+                "paramType": "string",
+                "paramDescription": "The Time of the Lecture During the Day, Like 09:00PPM"
+                
+            },
+            {
+                "paramName": "studentCount",
+                "paramType": "number",
+                "paramDescription": "The Number of students Registered on the Track"
+                
+            }
+        ],
+        "responseExample": [
+            [
+                {
+                    "id": 1,
+                    "description": "مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن مسار فقه المقارن مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن\n\n",
+                    "name": "تكوين",
+                    "lecturesCount": 12,
+                    "attendingExpensis": 15,
+                    "EnrollmentDeadline": "2024-07-08T05:21:18.000Z",
+                    "enrollmentToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFjayI6IjEiLCJ0YXJnZXQiOiJzdHVkZW50cyIsImlhdCI6MTcyMDQxNjA3MywiZXhwIjoxNzIwNTAyNDczfQ.0TopCJ6FA9deySnRaLYptNfDbkhl4CYu0doZpJ1Refc",
+                    "imageLink": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ52tMwAhxTwdrXZTvGb39YfePHKIZ_5NiWn_0TNH2cxDFLMHa7odO6ZE58963-8euwHTS1noQpCgmjlaMlpW6rMg3q5TT6Zg=w1920-h932",
+                    "lectureDay": "Sunday",
+                    "lectureTime": "3:00PM",
+                    "studentCount": 3
+                },
+                {
+                    "id": 2,
+                    "description": "مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن مسار فقه المقارن مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن\n\n",
+                    "name": "فقه",
+                    "lecturesCount": 10,
+                    "attendingExpensis": 20,
+                    "EnrollmentDeadline": "2024-07-09T05:01:24.000Z",
+                    "enrollmentToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFjayI6IjIiLCJ0YXJnZXQiOiJzdHVkZW50cyIsImlhdCI6MTcyMDQxNDg4MywiZXhwIjoxNzIwNTAxMjgzfQ.ss-zaM_XKgrK9GG_Tkz0m9k_dal1pvqsbGhMSyEq6hI",
+                    "imageLink": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ52tMwAhxTwdrXZTvGb39YfePHKIZ_5NiWn_0TNH2cxDFLMHa7odO6ZE58963-8euwHTS1noQpCgmjlaMlpW6rMg3q5TT6Zg=w1920-h932",
+                    "lectureDay": "Friday",
+                    "lectureTime": "2:00PM",
+                    "studentCount": 2
+                },
+                {
+                    "id": 8,
+                    "description": "مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن مسار فقه المقارن مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن مسار فقه المقارن هو مسار مهتم بدراسه الفقه المقارن\n\n",
+                    "name": "فقه مقارن",
+                    "lecturesCount": 123,
+                    "attendingExpensis": null,
+                    "EnrollmentDeadline": "2024-07-06T15:27:31.000Z",
+                    "enrollmentToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFjayI6OCwidGFyZ2V0Ijoic3R1ZGVudHMiLCJpYXQiOjE3MjAyNzkyNDMsImV4cCI6MTcyMTg2NTU5OX0.dx3FMWptqfGzma6uagsJXwU-u5PWgCrGpFPNikQE_1c",
+                    "imageLink": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ52tMwAhxTwdrXZTvGb39YfePHKIZ_5NiWn_0TNH2cxDFLMHa7odO6ZE58963-8euwHTS1noQpCgmjlaMlpW6rMg3q5TT6Zg=w1920-h932",
+                    "lectureDay": "Sunday",
+                    "lectureTime": null,
+                    "studentCount": 0
+                },
+                {
+                    "id": 9,
+                    "description": "التصور الإسلامي الكلي اليقيني عن الله الخالق، وعن الكون والإنسان والحياة، وعما قبل الحياة الدنيا وعّما بعدها، وعن العلاقة بين ما قبلها وما بعدها. فالعقيدة تتناول مباحث الإيمان والشريعة وأصول الدين والاعتقاديات كالإيمان الجازم بالله وملائكته وكتبه ورسله واليوم الآخر والقدر خيره وشره  وسائر ما ثَبَتَ من أُمور الغيب، وأُصول الدين، وما أجمع عليه السلف الصالح",
+                    "name": "العقيدة",
+                    "lecturesCount": 12,
+                    "attendingExpensis": null,
+                    "EnrollmentDeadline": "2024-07-08T05:39:54.000Z",
+                    "enrollmentToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFjayI6OSwidGFyZ2V0Ijoic3R1ZGVudHMiLCJpYXQiOjE3MjA0MTcxNzAsImV4cCI6MTcyMDU2OTU5OX0.-rVNnSUnEnOjrCHsh8RRuHDWk1CYsco6wS1QqZSDZLw",
+                    "imageLink": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZ52tMwAhxTwdrXZTvGb39YfePHKIZ_5NiWn_0TNH2cxDFLMHa7odO6ZE58963-8euwHTS1noQpCgmjlaMlpW6rMg3q5TT6Zg=w1920-h932",
+                    "lectureDay": "Saturday",
+                    "lectureTime": null,
+                    "studentCount": 0
+                }
+            ]
+        ],
+        "responseDescription": "Receives the list of all Tracks and TRack's Data, or one of the Common Errors"
+    },
+    {
         "endpoint": "/super-admin/new_track",
         "section": "super-admin",
         "method": "POST",
         "description": "Create a new track",
         "parameters": [
+            {
+                "paramName": "currentDate",
+                "paramType": "string",
+                "paramDescription": "The Date of the Current Moment from the Front-end"
+            },
             {
                 "paramName": "name",
                 "paramType": "string",
@@ -200,14 +310,19 @@
                 "paramDescription": "The number of lectures in the track"
             },
             {
-                "paramName": "attendingExpensis",
-                "paramType": "number",
-                "paramDescription": "The price for attending the track for Each Lecture"
+                "paramName": "description",
+                "paramType": "string",
+                "paramDescription": "The Description of the Track"
             },
             {
                 "paramName": "lectureDay",
                 "paramType": "string",
                 "paramDescription": "The Expected weekly date for the track meetings"
+            },
+            {
+                "paramName": "imageLink",
+                "paramType": "string",
+                "paramDescription": "Track Cover Image Link"
             },
             {
                 "paramName": "EnrollmentDeadline",
@@ -216,11 +331,13 @@
             }
         ],
         "requestExample": {
+            "currentDate":"2024-07-01",
             "name": "New Track",
             "lecturesCount": 10,
-            "attendingExpensis": 100.00,
+            "description": "this Track is Doing ....",
             "lectureDay": "Monday",
-            "EnrollmentDeadline": "2024-07-01"
+            "EnrollmentDeadline": "2024-07-01",
+            "imageLink":"https:// ....."
         },
         "responseExample": "Done",
         "responseDescription": "Receives 'Done' if the track is successfully created, or one of the common errors"
@@ -280,19 +397,25 @@
         "description": "Extend Dealine for Enrollment to a Given Date",
         "parameters": [
             {
+                "paramName": "currentDate",
+                "paramType": "string",
+                "paramDescription": "The Date of the Current Moment from the Front-end"
+            },
+            {
                 "paramName": "trackID",
                 "paramType": "number",
                 "paramDescription": "The ID of the track"
             },
             {
-                "paramName": "DateToClose",
+                "paramName": "newDeadline",
                 "paramType": "Date",
                 "paramDescription": "The Date when the Enrollment Close (Deadline for Enrollment)"
             }
         ],
         "requestExample": {
+            "currentDate":"2024-07-01",
             "trackID": 2,
-            "DateToClose": "2024-07-01"
+            "newDeadline": "2024-07-01"
         },
         "responseExample": "Done",
         "responseDescription": "Receives 'Done' if the track is successfully Modified, or one of the common errors"
