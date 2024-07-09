@@ -12,6 +12,7 @@ import adminLecturesJson from '../jsonDocs/admin-lectures.json' assert {type:"js
 import adminAttendancesJson from '../jsonDocs/admin-attendace.json' assert {type:"json"}
 import adminFinancialsJson from '../jsonDocs/admin-financials.json' assert {type:"json"}
 import superAdminJson from '../jsonDocs/Super-admin.json' assert {type:"json"}
+import FilesJson from '../jsonDocs/Files.json' assert {type:"json"}
 
 const jsonData = [
     ...overviewJson,
@@ -26,7 +27,8 @@ const jsonData = [
     ...adminLecturesJson,
     ...adminAttendancesJson,
     ...adminFinancialsJson,
-    ...superAdminJson   
+    ...superAdminJson,
+    ...FilesJson
 ]
 
 Object.prototype.prettyPrint = function(){

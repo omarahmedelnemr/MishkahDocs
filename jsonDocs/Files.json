@@ -1,0 +1,39 @@
+[
+    {
+        "endpoint":"/files/track_attendance_sheet",
+        "section":"files",
+        "method":"GET",
+        "description":"Get The Attendance Sheet Excel For a Selected Track",
+        "parameters":[
+            {
+                "paramName":"trackID",
+                "paramType":"number",
+                "paramDescription":"The ID of The Track"
+            }
+        ],
+        "requestExample":{
+            "trackID":1
+        },
+        
+        "responseDescription":"Downloads an Excel Sheet For the Attendace Records in This Track"
+    },
+    {
+        "endpoint":"/files/track_financial_sheet",
+        "section":"files",
+        "method":"GET",
+        "description":"Get The Financial Sheet Excel For a Selected Track",
+        "parameters":[
+            {
+                "paramName":"trackID",
+                "paramType":"number",
+                "paramDescription":"The ID of The Track"
+            }
+        ],
+        "requestExample":{
+            "trackID":1
+        },
+        
+        "responseDescription":"Downloads an Excel Sheet For the Financial Records in This Track"
+    }
+    
+]
