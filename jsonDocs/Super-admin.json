@@ -27,7 +27,21 @@
                 "paramType": "Boolean",
                 "paramDescription": "The Gender of the admin, 0 for Male, 1 For Woman"
             },
-            
+            {
+                "paramName": "email",
+                "paramType": "string",
+                "paramDescription": "The Email of the Admin"
+            },
+            {
+                "paramName": "verified",
+                "paramType": "Boolean",
+                "paramDescription": "Wheather the Admin Verify his/her email or not"
+            },
+            {
+                "paramName": "active",
+                "paramType": "Boolean",
+                "paramDescription": "Wheather the Admin is Active or Been Blocked by Super admin"
+            },
             {
                 "paramName": "tracks",
                 "paramType": "array",
@@ -37,40 +51,17 @@
         ],
         "responseExample": [
             {
-                "id": 1,
-                "name": "Omar",
-                "phone": "012",
-                "sex": 0,
-                "role": "admin",
+                "id": 9,
+                "name": "ahmed",
+                "phone": "012301283",
+                "sex": false,
+                "email": "omarahmed@gmail.com",
+                "verified": true,
+                "active": true,
                 "tracks": [
                     {
                         "id": 2,
-                        "description": "",
-                        "name": "Fiqh",
-                        "lecturesCount": 10,
-                        "attendingExpensis": 20,
-                        "EnrollmentDeadline": null,
-                        "lectureDay": "Friday",
-                        "lectureTime": "2:00PM"
-                    }
-                ]
-            },
-            {
-                "id": 2,
-                "name": "salma",
-                "phone": "012",
-                "sex": 1,
-                "role": "admin",
-                "tracks": [
-                    {
-                        "id": 2,
-                        "description": "",
-                        "name": "Fiqh",
-                        "lecturesCount": 10,
-                        "attendingExpensis": 20,
-                        "EnrollmentDeadline": null,
-                        "lectureDay": "Friday",
-                        "lectureTime": "2:00PM"
+                        "name": "فقه"
                     }
                 ]
             }
@@ -523,64 +514,81 @@
         },
         "responseParameters": [
             {
+                "paramName": "id",
+                "paramType": "number",
+                "paramDescription": "Student ID"
+            },
+            {
+                "paramName": "name",
+                "paramType": "string",
+                "paramDescription": "Student name"
+            },
+            {
+                "paramName": "phone",
+                "paramType": "string",
+                "paramDescription": "Student phone"
+            },
+            {
+                "paramName": "sex",
+                "paramType": "Boolean",
+                "paramDescription": "The Gender of the Student, 0 for Male, 1 For Woman"
+            },
+            {
                 "paramName": "email",
                 "paramType": "string",
-                "paramDescription": "user's Email"
+                "paramDescription": "The Email of the Student"
             },
             {
                 "paramName": "verified",
                 "paramType": "Boolean",
-                "paramDescription": "Wheather the User had Verify his Email when Signup or not"
+                "paramDescription": "Wheather the Student Verify his/her email or not"
             },
             {
                 "paramName": "active",
                 "paramType": "Boolean",
-                "paramDescription": "Wheather the User had Been Blocked or not"
+                "paramDescription": "Wheather the Student is Active or Been Blocked by Super admin"
             },
             {
-                "paramName": "student",
-                "paramType": "Object",
-                "paramDescription": "Student Info with Registered Tracks"
+                "paramName": "tracks",
+                "paramType": "array",
+                "paramDescription": "List of Student Enrolled Tracks"
+                
             }
         ],
         "responseExample": [
             {
-                "email": "omarahmedelnemr10@gmail.com",
-                "verified": false,
+                "id": 1,
+                "name": "omar ahmed ",
+                "email": "omarahmed10@gmail.com",
+                "verified": true,
                 "active": true,
-                "student": {
-                    "id": 1,
-                    "name": "omar ahmed ",
-                    "phone": "011",
-                    "sex": false,
-                    "tracks": [
-                        {
-                            "id": 1,
-                            "name": "تكوين"
-                        },
-                        {
-                            "id": 2,
-                            "name": "فقه"
-                        }
-                    ]
-                }
+                "phone": "011",
+                "sex": false,
+                "tracks": [
+                    {
+                        "id": 1,
+                        "name": "تكوين"
+                    },
+                    {
+                        "id": 2,
+                        "name": "فقه"
+                    }
+                ]
             },
             {
-                "email": "omarahmedelnemr1@gmail.com",
+                "id": 2,
+                "name": "ahmed_mohamed",
+                "email": "omarahmed1@gmail.com",
                 "verified": false,
                 "active": true,
-                "student": {
-                    "id": 2,
-                    "name": "ahmed_mohamed",
-                    "phone": "012",
-                    "sex": false,
-                    "tracks": [
-                        {
-                            "id": 1,
-                            "name": "تكوين"
-                        }
-                    ]
-                }
+                "phone": "012",
+                "sex": false,
+                "tracks": [
+                    {
+                        "id": 1,
+                        "name": "تكوين"
+                    }
+                ]
             }
         ],
         "responseDescription": "Receives 'Done' if the track is successfully created, or one of the common errors"
