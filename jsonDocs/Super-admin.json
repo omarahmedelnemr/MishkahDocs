@@ -594,7 +594,7 @@
         "responseDescription": "Receives 'Done' if the track is successfully created, or one of the common errors"
     },
     {
-        "endpoint": "/super-admin/user_block",
+        "endpoint": "/super-admin/student_block",
         "section": "super-admin",
         "method": "POST",
         "description": "Block a User From Login (Block his Account)",
@@ -612,7 +612,7 @@
         "responseDescription": "Receives 'Done' if the Account are successfully Blocked, or one of the common errors"
     },
     {
-        "endpoint": "/super-admin/user_block",
+        "endpoint": "/super-admin/student_block",
         "section": "super-admin",
         "method": "DELETE",
         "description": "remove a Block From a User",
@@ -628,6 +628,30 @@
         },
         "responseExample": "Done",
         "responseDescription": "Receives 'Done' if the Account are successfully un-Blocked, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/student_enrollment",
+        "section": "super-admin",
+        "method": "DELETE",
+        "description": "Remove a Student From a Track Enrollment",
+        "parameters": [
+            {
+                "paramName": "studentID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the Student"
+            },
+            {
+                "paramName": "trackID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the Track"
+            }
+        ],
+        "requestExample": {
+            "studentID": 123,
+            "trackID": 123
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the Student are successfully un-Enroll, or one of the common errors"
     },
     {
         "endpoint": "/super-admin/student_account",
