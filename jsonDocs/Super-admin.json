@@ -141,6 +141,42 @@
         "responseDescription": "Receives 'Done' if the permissions are successfully changed, or one of the common errors"
     },
     {
+        "endpoint": "/super-admin/admin_block",
+        "section": "super-admin",
+        "method": "POST",
+        "description": "Block an Admin From Login (Block his Account)",
+        "parameters": [
+            {
+                "paramName": "adminID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the admin"
+            }
+        ],
+        "requestExample": {
+            "adminID": 123
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the Account are successfully Blocked, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/admin_block",
+        "section": "super-admin",
+        "method": "DELETE",
+        "description": "remove a Block From an Admin",
+        "parameters": [
+            {
+                "paramName": "adminID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the admin"
+            }
+        ],
+        "requestExample": {
+            "adminID": 123
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the Account are successfully un-Blocked, or one of the common errors"
+    },
+    {
         "endpoint": "/super-admin/admin",
         "section": "super-admin",
         "method": "DELETE",
@@ -468,5 +504,139 @@
         },
         "responseExample": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFjayI6IjEiLCJ0YXJnZXQiOiJzdHVkZW50cyIsImlhdCI6MTcxOTUwNTc0MywiZXhwIjoxNzIwMDI0MTQzfQ.TK3h__qrQM6GqmScv_WtPuwhSxieoHYxA8bgQRu-w88",
         "responseDescription": "Receives 'Done' if the track is successfully created, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/student_list",
+        "section": "super-admin",
+        "method": "GET",
+        "description": "Get all Student Registerd in a Track , With all other Tracks They are Registered in",
+        "parameters": [
+            {
+                "paramName": "trackID",
+                "paramType": "number",
+                "paramDescription": "The ID of the admin"
+            }
+
+        ],
+        "requestExample": {
+            "trackID": 10
+        },
+        "responseParameters": [
+            {
+                "paramName": "email",
+                "paramType": "string",
+                "paramDescription": "user's Email"
+            },
+            {
+                "paramName": "verified",
+                "paramType": "Boolean",
+                "paramDescription": "Wheather the User had Verify his Email when Signup or not"
+            },
+            {
+                "paramName": "active",
+                "paramType": "Boolean",
+                "paramDescription": "Wheather the User had Been Blocked or not"
+            },
+            {
+                "paramName": "student",
+                "paramType": "Object",
+                "paramDescription": "Student Info with Registered Tracks"
+            }
+        ],
+        "responseExample": [
+            {
+                "email": "omarahmedelnemr10@gmail.com",
+                "verified": false,
+                "active": true,
+                "student": {
+                    "id": 1,
+                    "name": "omar ahmed ",
+                    "phone": "011",
+                    "sex": false,
+                    "tracks": [
+                        {
+                            "id": 1,
+                            "name": "تكوين"
+                        },
+                        {
+                            "id": 2,
+                            "name": "فقه"
+                        }
+                    ]
+                }
+            },
+            {
+                "email": "omarahmedelnemr1@gmail.com",
+                "verified": false,
+                "active": true,
+                "student": {
+                    "id": 2,
+                    "name": "ahmed_mohamed",
+                    "phone": "012",
+                    "sex": false,
+                    "tracks": [
+                        {
+                            "id": 1,
+                            "name": "تكوين"
+                        }
+                    ]
+                }
+            }
+        ],
+        "responseDescription": "Receives 'Done' if the track is successfully created, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/user_block",
+        "section": "super-admin",
+        "method": "POST",
+        "description": "Block a User From Login (Block his Account)",
+        "parameters": [
+            {
+                "paramName": "userID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the User"
+            }
+        ],
+        "requestExample": {
+            "userID": 123
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the Account are successfully Blocked, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/user_block",
+        "section": "super-admin",
+        "method": "DELETE",
+        "description": "remove a Block From a User",
+        "parameters": [
+            {
+                "paramName": "userID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the User"
+            }
+        ],
+        "requestExample": {
+            "userID": 123
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the Account are successfully un-Blocked, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/student_account",
+        "section": "super-admin",
+        "method": "DELETE",
+        "description": "Delete a Student Account From a System, with all it's Relative Data",
+        "parameters": [
+            {
+                "paramName": "userID",
+                "paramType": "integer",
+                "paramDescription": "The ID of the User"
+            }
+        ],
+        "requestExample": {
+            "userID": 123
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the Account are successfully Deleted, or one of the common errors"
     }
 ]
