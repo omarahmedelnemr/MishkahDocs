@@ -104,34 +104,6 @@
         "responseDescription": "Receives a token to send to the new admin for starting the sign-in process"
     },
     {
-        "endpoint": "/super-admin/change_permissions",
-        "section": "super-admin",
-        "method": "POST",
-        "description": "Edit permissions for an admin",
-        "parameters": [
-            {
-                "paramName": "adminID",
-                "paramType": "integer",
-                "paramDescription": "The ID of the admin"
-            },
-            {
-                "paramName": "permissions",
-                "paramType": "array",
-                "paramDescription": "List of new permissions ID's",
-                "paramItems": {
-                    "type": "string",
-                    "description": "Permission name"
-                }
-            }
-        ],
-        "requestExample": {
-            "adminID": 123,
-            "permissions": [2, 4]
-        },
-        "responseExample": "Done",
-        "responseDescription": "Receives 'Done' if the permissions are successfully changed, or one of the common errors"
-    },
-    {
         "endpoint": "/super-admin/admin_block",
         "section": "super-admin",
         "method": "POST",

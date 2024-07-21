@@ -35,18 +35,12 @@
                 "paramName":"late",
                 "paramType":"number",
                 "paramDescription":"The amount Not Paid yet by the user"
-            },
-            {
-                "paramName":"wallet",
-                "paramType":"number",
-                "paramDescription":"The amount The User Have on Our Wallet"
             }
         ],
         "responseExample":{
             "paid":1000,
             "late":120,
-            "total":500,
-            "wallet":200
+            "total":500
         },
         "responseDescription":"Receives paid, total, and remaining amounts for the user's financial status"
     },
