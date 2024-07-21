@@ -233,6 +233,7 @@ pre{
 .content h5,
 .content h6,
 .content p,
+.content a,
 .content table,
 .content aside,
 .content dl,
@@ -486,6 +487,7 @@ html.menu-opened .burger-menu-icon  .line3 {
     .content h5,
     .content h6,
     .content p,
+    .content a,
     .content table,
     .content aside,
     .content dl,
@@ -515,6 +517,7 @@ html.menu-opened .burger-menu-icon  .line3 {
     .content h5,
     .content h6,
     .content p,
+    .content a,
     .content table,
     .content aside,
     .content dl,
@@ -522,4 +525,14 @@ html.menu-opened .burger-menu-icon  .line3 {
     .content ol,
     .content .central-overflow-x {
         margin-right: 0%;}
+}
+
+
+.DBLink{
+    color: blue !important;
+    margin-bottom: 10px;
+}
+.DBImage{
+    width: 90%;
+    margin-left: 28px;
 }
