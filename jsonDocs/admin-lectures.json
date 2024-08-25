@@ -229,11 +229,17 @@
                 "paramName": "taskText",
                 "paramType": "string",
                 "paramDescription": "The text of the task"
+            },
+            {
+                "paramName": "mandatory",
+                "paramType": "boolean",
+                "paramDescription": "Wheather the Task is mandatory or Just To View"
             }
         ],
         "requestExample": {
             "lectureID": 32,
-            "taskText": "Complete the assignment"
+            "taskText": "Complete the assignment",
+            "mandatory":true
         },
         "responseExample": {
             "taskID":1
