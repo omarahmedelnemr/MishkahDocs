@@ -452,7 +452,7 @@
             {
                 "paramName": "trackID",
                 "paramType": "number",
-                "paramDescription": "The ID of the admin"
+                "paramDescription": "The ID of the track"
             },
             {
                 "paramName": "currentDate",
@@ -466,6 +466,74 @@
             "currentDate": "2024-07-01"
         },
         "responseExample": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFjayI6IjEiLCJ0YXJnZXQiOiJzdHVkZW50cyIsImlhdCI6MTcxOTUwNTc0MywiZXhwIjoxNzIwMDI0MTQzfQ.TK3h__qrQM6GqmScv_WtPuwhSxieoHYxA8bgQRu-w88",
+        "responseDescription": "Receives 'Done' if the track is successfully created, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/reg_form_responses",
+        "section": "super-admin",
+        "method": "GET",
+        "description": "Get Responses Related to a Track Form",
+        "parameters": [
+            {
+                "paramName": "trackID",
+                "paramType": "number",
+                "paramDescription": "The ID of the track"
+            }
+
+
+        ],
+        "requestExample": {
+            "trackID": 1
+        },
+        "responseExample": [
+            {
+                "id": 2,
+                "date": "2024-08-25T17:12:16.000Z",
+                "full_name": "omar ahmed elnemr",
+                "email": null,
+                "phone": "0110",
+                "gender": false,
+                "has_account": false,
+                "telegram_username": null,
+                "accepted": null
+            },
+            {
+                "id": 3,
+                "date": "2024-08-25T19:12:20.000Z",
+                "full_name": "omar ahmed elnemr",
+                "email": "omarahmedelnemr10@gmail.com",
+                "phone": "0110",
+                "gender": false,
+                "has_account": true,
+                "telegram_username": null,
+                "accepted": true
+            }
+        ],
+        "responseDescription": "Receives Responses List if Everything Went Well, or one of the common errors"
+    },
+    {
+        "endpoint": "/super-admin/registration_desicion",
+        "section": "super-admin",
+        "method": "POST",
+        "description": "Accept or Reject a User from Resigtration Form",
+        "parameters": [
+            {
+                "paramName": "registerID",
+                "paramType": "number",
+                "paramDescription": "The ID of the Registration"
+            },
+            {
+                "paramName": "accept",
+                "paramType": "boolean",
+                "paramDescription": "wheather to Be Accepted or Rejected"
+            }
+
+        ],
+        "requestExample": {
+            "registerID": 10,
+            "accept": true
+        },
+        "responseExample": "Done",
         "responseDescription": "Receives 'Done' if the track is successfully created, or one of the common errors"
     },
     {

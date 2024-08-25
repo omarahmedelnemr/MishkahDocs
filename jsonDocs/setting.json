@@ -3,7 +3,7 @@
         "endpoint": "/settings/change_email",
         "section": "settings",
         "method": "POST",
-        "description": "Change the user's Email used in the login process",
+        "description": "Change the user's Email that Might be used in the login process",
         "parameters": [
             {
                 "paramName": "userID",
@@ -28,6 +28,36 @@
         },
         "responseExample": "Done",
         "responseDescription": "Receives 'Done' if the Email is successfully changed, or one of the common errors"
+    },
+    {
+        "endpoint": "/settings/change_phone",
+        "section": "settings",
+        "method": "POST",
+        "description": "Change the user's Phone Number that Might be used in the login process",
+        "parameters": [
+            {
+                "paramName": "userID",
+                "paramType": "number",
+                "paramDescription": "The user's ID"
+            },
+            {
+                "paramName": "password",
+                "paramType": "string",
+                "paramDescription": "The user's password for authentication"
+            },
+            {
+                "paramName": "newPhone",
+                "paramType": "string",
+                "paramDescription": "The new Phone to be set"
+            }
+        ],
+        "requestExample": {
+            "userID": 12,
+            "password": "password123",
+            "newPhone": "01154006679"
+        },
+        "responseExample": "Done",
+        "responseDescription": "Receives 'Done' if the Phone is successfully changed, or one of the common errors"
     },
     {
         "endpoint": "/settings/change_password",

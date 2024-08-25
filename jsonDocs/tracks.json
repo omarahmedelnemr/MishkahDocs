@@ -168,8 +168,7 @@
         ],
         "responseDescription":"Receives a list of tracks the user can enroll in, including the track name, description, number of lectures, and the date of the first lecture"
     }
-    ,
-    {
+    ,{
         "endpoint":"/tracks/track_info",
         "section":"tracks",
         "method":"GET",
@@ -267,5 +266,82 @@
         },
         "responseExample":"done",
         "responseDescription":"Receives 'Done' if the task is successfully marked as not done or one of the common errors"
+    },
+    {
+        "endpoint":"/tracks/check_exist",
+        "section":"tracks",
+        "method":"POST",
+        "description":"Check if Phone or Email Exit in the System",
+        "parameters":[
+            {
+                "paramName":"phone",
+                "paramType":"String",
+                "paramDescription":"(Phone or Email) The student Phone"
+            },
+            {
+                "paramName":"email",
+                "paramType":"String",
+                "paramDescription":"(Phone or Email) The student Email"
+            }
+        ],
+        "requestExample":{
+            "phone":"01231231"
+        },
+        "responseExample":true,
+        "responseDescription":"Receives True or False if the task is successfully marked as not done or one of the common errors"
+    },
+    {
+        "endpoint":"/tracks/registration",
+        "section":"tracks",
+        "method":"POST",
+        "description":"Submit a Registration Form",
+        "parameters":[
+            {
+                "paramName":"full_name",
+                "paramType":"string",
+                "paramDescription":"The student Name"
+            },
+            {
+                "paramName":"trackID",
+                "paramType":"integer",
+                "paramDescription":"The Track ID"
+            },
+            {
+                "paramName":"phone",
+                "paramType":"string",
+                "paramDescription":"Student's Phone"
+            },
+            {
+                "paramName":"email",
+                "paramType":"string",
+                "paramDescription":"(optional) Student's Email"
+            },
+            {
+                "paramName":"has_account",
+                "paramType":"Boolean",
+                "paramDescription":"Wheather the Student has Account or Not"
+            },
+            {
+                "paramName":"gender",
+                "paramType":"boolean",
+                "paramDescription":"0 for Male or, 1 For Female"
+            },
+            {
+                "paramName":"telegram_username",
+                "paramType":"string",
+                "paramDescription":"(optional) Telegram Handle if Exist"
+            }
+        ],
+        "requestExample":{
+            "full_name":123,
+            "trackID":123,
+            "phone":"01231231",
+            "email":"email@email.com",
+            "has_account":true,
+            "gender":true
+
+        },
+        "responseExample":"done",
+        "responseDescription":"Receives 'Done' if the Registration Form Submitted successfully or one of the common errors"
     }
 ]
