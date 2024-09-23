@@ -29,7 +29,7 @@
             },
             {
                 "paramName": "studentName",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "The Name of the Student"
             },
             {

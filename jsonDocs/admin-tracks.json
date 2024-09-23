@@ -22,12 +22,12 @@
             },
             {
                 "paramName":"name",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the track"
             },
             {
                 "paramName":"description",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The description of the track"
             },
             {
@@ -47,12 +47,12 @@
             },
             {
                 "paramName":"lectureDay",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Day date of the lecture in the track"
             },
             {
                 "paramName":"lectureTime",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Time date of the lecture in the track"
             }
         ],
@@ -93,12 +93,12 @@
             },
             {
                 "paramName": "newDay",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The new weekly Day date for the track meetings"
             },
             {
                 "paramName": "newTime",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The new Day time for the track meetings"
             }
         ],

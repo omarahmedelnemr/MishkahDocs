@@ -28,17 +28,17 @@
             },
             {
                 "paramName": "studentName",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "The Name of the Student"
             },
             {
                 "paramName": "lectureTitle",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "The Title of the Lecture"
             },
             {
                 "paramName": "lectureDate",
-                "paramType": "String",
+                "paramType": "String (255)",
                 "paramDescription": "The Date of the Lecture"
             },
             {

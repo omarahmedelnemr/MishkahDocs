@@ -62,12 +62,12 @@
         "responseParameters":[
             {
                 "paramName":"name",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the assignment"
             },
             {
                 "paramName":"track",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The track of the assignment"
             },
             {
@@ -77,7 +77,7 @@
             },
             {
                 "paramName":"status",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The status of the assignment"
             }
         ],
@@ -169,7 +169,7 @@
         "responseParameters":[
             {
                 "paramName":"nextLecture",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The date of the next lecture"
             }
         ],

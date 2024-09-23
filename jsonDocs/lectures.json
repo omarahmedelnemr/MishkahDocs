@@ -7,12 +7,12 @@
         "parameters":[
             {
                 "paramName":"userID",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The user ID to determine whether the user has completed the tasks"
             },
             {
                 "paramName":"trackID",
-                "paramType":"string",
+                "paramType":"Number",
                 "paramDescription":"The track ID"
             }
         ],
@@ -23,17 +23,17 @@
         "responseParameters":[
             {
                 "paramName":"id",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the lecture"
             },
             {
                 "paramName":"title",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the lecture"
             },
             {
                 "paramName":"date",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The date of the lecture"
             },
             {
@@ -185,7 +185,7 @@
             },
             {
                 "paramName":"title",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the material"
             },
             {
@@ -195,7 +195,7 @@
             },
             {
                 "paramName":"link",
-                "paramType":"string",
+                "paramType":"String (500)",
                 "paramDescription":"The Link of the material"
             }
         ],
@@ -223,7 +223,7 @@
         "parameters":[
             {
                 "paramName":"userID",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The user ID to determine whether the user has completed the tasks"
             },
             {
@@ -239,12 +239,12 @@
         "responseParameters":[
             {
                 "paramName":"id",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the task"
             },
             {
                 "paramName":"title",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the task"
             },
             {

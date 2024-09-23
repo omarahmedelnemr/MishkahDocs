@@ -22,12 +22,12 @@
             },
             {
                 "paramName":"name",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the track"
             },
             {
                 "paramName":"description",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The description of the track"
             },
             {
@@ -47,12 +47,12 @@
             },
             {
                 "paramName":"lectureDay",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Day date of the lecture in the track"
             },
             {
                 "paramName":"lectureTime",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Time date of the lecture in the track"
             }
         ],
@@ -110,12 +110,12 @@
             },
             {
                 "paramName":"name",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the track"
             },
             {
                 "paramName":"description",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The description of the track"
             },
             {
@@ -135,12 +135,12 @@
             },
             {
                 "paramName":"lectureDay",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Day date of the lecture in the track"
             },
             {
                 "paramName":"lectureTime",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Time date of the lecture in the track"
             }
         ],
@@ -181,7 +181,7 @@
             },
             {
                 "paramName":"token",
-                "paramType":"String",
+                "paramType":"String (500)",
                 "paramDescription":"a Token The User Recieved From Server-side at any Operation (any JWT from Server-Side)"
             }
         ],
@@ -197,12 +197,12 @@
             },
             {
                 "paramName":"name",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the track"
             },
             {
                 "paramName":"description",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The description of the track"
             },
             {
@@ -222,12 +222,12 @@
             },
             {
                 "paramName":"lectureDay",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Day date of the lecture in the track"
             },
             {
                 "paramName":"lectureTime",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The Time date of the lecture in the track"
             }
         ],
@@ -275,12 +275,12 @@
         "parameters":[
             {
                 "paramName":"phone",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(Phone or Email) The student Phone"
             },
             {
                 "paramName":"email",
-                "paramType":"String",
+                "paramType":"String (255)",
                 "paramDescription":"(Phone or Email) The student Email"
             }
         ],
@@ -298,22 +298,22 @@
         "parameters":[
             {
                 "paramName":"full_name",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The student Name"
             },
             {
                 "paramName":"trackID",
-                "paramType":"integer",
+                "paramType":"Number",
                 "paramDescription":"The Track ID"
             },
             {
                 "paramName":"phone",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"Student's Phone"
             },
             {
                 "paramName":"email",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"(optional) Student's Email"
             },
             {
@@ -328,7 +328,7 @@
             },
             {
                 "paramName":"telegram_username",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"(optional) Telegram Handle if Exist"
             }
         ],

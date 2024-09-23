@@ -7,27 +7,27 @@
         "parameters": [
             {
                 "paramName": "token",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The token received from the super Admin, Should Contians Persmissions Array and Tracks Array"
             },
             {
                 "paramName": "password",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The password for the new admin"
             },
             {
                 "paramName": "email",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The admin Email Used to login Recover the Accound When Needed"
             },
             {
                 "paramName": "name",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The Name of The Admin (Recommended to be in Arabic )"
             },
             {
                 "paramName": "phone",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The Phone Number of The Admin"
             },
             {

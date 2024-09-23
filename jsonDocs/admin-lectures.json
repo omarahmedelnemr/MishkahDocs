@@ -17,17 +17,17 @@
         "responseParameters":[
             {
                 "paramName":"id",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the lecture"
             },
             {
                 "paramName":"title",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the lecture"
             },
             {
                 "paramName":"date",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The date of the lecture"
             }
         ],
@@ -63,12 +63,12 @@
         "responseParameters":[
             {
                 "paramName":"id",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The ID of the task"
             },
             {
                 "paramName":"title",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the task"
             },
             {
@@ -124,7 +124,7 @@
             },
             {
                 "paramName":"title",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the material"
             },
             {
@@ -134,7 +134,7 @@
             },
             {
                 "paramName":"link",
-                "paramType":"string",
+                "paramType":"String (500)",
                 "paramDescription":"The Link of the material"
             }
         ],
@@ -167,12 +167,12 @@
             },
             {
                 "paramName": "lectureTitle",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "(optional) The title of the lecture, the Default is 'المحاضرة' and the Number of it"
             },
             {
                 "paramName": "lectureDate",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The date of the lecture"
             }
         ],
@@ -197,12 +197,12 @@
             },
             {
                 "paramName": "lectureTitle",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "(optional) The title of the lecture to be Edited"
             },
             {
                 "paramName": "lectureDate",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "(optional) The date of the lecture"
             }
             
@@ -227,7 +227,7 @@
             },
             {
                 "paramName": "taskText",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The text of the task"
             },
             {
@@ -259,7 +259,7 @@
             },
             {
                 "paramName": "materialTitle",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The title of the material"
             },
             {
@@ -269,7 +269,7 @@
             },
             {
                 "paramName": "materialLink",
-                "paramType": "string",
+                "paramType": "String (500)",
                 "paramDescription": "The Link of the material (video or document)"
             }
         ],

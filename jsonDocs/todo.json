@@ -22,12 +22,12 @@
             },
             {
                 "paramName":"title",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the task"
             },
             {
                 "paramName":"track",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The track of the task"
             },
             {
@@ -98,12 +98,12 @@
             },
             {
                 "paramName":"title",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the task"
             },
             {
                 "paramName":"track",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The track of the task"
             },
             {

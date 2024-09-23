@@ -12,12 +12,12 @@
             },
             {
                 "paramName": "password",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The user's password for authentication"
             },
             {
                 "paramName": "newEmail",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The new Email to be set"
             }
         ],
@@ -42,12 +42,12 @@
             },
             {
                 "paramName": "password",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The user's password for authentication"
             },
             {
                 "paramName": "newPhone",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The new Phone to be set"
             }
         ],
@@ -72,12 +72,12 @@
             },
             {
                 "paramName": "oldPassword",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The user's current password"
             },
             {
                 "paramName": "newPassword",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The new password to be set"
             }
         ],

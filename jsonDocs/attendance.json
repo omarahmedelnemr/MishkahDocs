@@ -23,7 +23,7 @@
         "responseParameters":[
             {
                 "paramName":"title",
-                "paramType":"string",
+                "paramType":"String (255)",
                 "paramDescription":"The name of the lecture"
             },
             {

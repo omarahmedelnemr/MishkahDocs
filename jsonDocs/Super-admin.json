@@ -14,12 +14,12 @@
             },
             {
                 "paramName": "name",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "Admin name"
             },
             {
                 "paramName": "phone",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "Admin phone"
             },
             {
@@ -29,7 +29,7 @@
             },
             {
                 "paramName": "email",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The Email of the Admin"
             },
             {
@@ -94,7 +94,7 @@
         "responseParameters": [
             {
                 "paramName": "token",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "A token to send to admin to start signing in"
             }
         ],
@@ -172,12 +172,12 @@
             },
             {
                 "paramName": "name",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "Track name"
             },
             {
                 "paramName": "description",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The Description of the Track"
             },
             {
@@ -200,25 +200,25 @@
             },
             {
                 "paramName": "enrollmentToken",
-                "paramType": "string",
+                "paramType": "String (500)",
                 "paramDescription": "The Token Used to Generate a Registraion Link"
                 
             },
             {
                 "paramName": "imageLink",
-                "paramType": "string",
+                "paramType": "String (500)",
                 "paramDescription": "Track Cover Image"
                 
             },
             {
                 "paramName": "lectureDay",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The Day of the Track During the Week like Tuesday"
                 
             },
             {
                 "paramName": "lectureTime",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The Time of the Lecture During the Day, Like 09:00PPM"
                 
             },
@@ -295,12 +295,12 @@
         "parameters": [
             {
                 "paramName": "currentDate",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The Date of the Current Moment from the Front-end"
             },
             {
                 "paramName": "name",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The name of the track"
             },
             {
@@ -310,17 +310,17 @@
             },
             {
                 "paramName": "description",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The Description of the Track"
             },
             {
                 "paramName": "lectureDay",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The Expected weekly date for the track meetings"
             },
             {
                 "paramName": "imageLink",
-                "paramType": "string",
+                "paramType": "String (500)",
                 "paramDescription": "Track Cover Image Link"
             },
             {
@@ -397,7 +397,7 @@
         "parameters": [
             {
                 "paramName": "currentDate",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The Date of the Current Moment from the Front-end"
             },
             {
@@ -560,12 +560,12 @@
             },
             {
                 "paramName": "name",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "Student name"
             },
             {
                 "paramName": "phone",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "Student phone"
             },
             {
@@ -575,7 +575,7 @@
             },
             {
                 "paramName": "email",
-                "paramType": "string",
+                "paramType": "String (255)",
                 "paramDescription": "The Email of the Student"
             },
             {
